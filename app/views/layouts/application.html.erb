@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Expat</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <%= render 'layouts/standard_head' %>
+  <body class="center">
+    <div id="whole-background" class="w100 pa">
+      <div class="w100" id="black-band"></div>
+      <div class="w100" id="white-touch"></div>
+      <div class="w100" id="gradient-band"></div>
+    </div>
+    <div class="pr">
+    <div id="container-wrapper">
+    <%= render 'layouts/standard_container' %>
+    </div>
+    </div>
+  </body>
+  <% unless @cms_page.blank? || cms_page_content(:function_script).blank? %>
+    <% result = cms_page_content(:function_script) %>
+    <script>
+      <%= result + '();' %>
+    </script>
+  <% end %>
 </html>

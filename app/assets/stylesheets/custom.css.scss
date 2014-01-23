@@ -1,0 +1,96 @@
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+$gradientGray: #CCC;
+
+.center {text-align: center;}
+.w100   {width: 100%;}
+.w50    {width: 50%;}
+.pr     {position: relative;}
+.pa     {position: absolute;}
+.clear  {clear: both;}
+.fixed  {position: fixed;}
+
+@mixin border-radius ($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin shadow {
+  box-shadow: 5px 5px 3px 0 #999;
+-moz-box-shadow: 5px 5px 3px 0 #999;
+-webkit-box-shadow: 5px 5px 3px 0 #999;
+}
+#whole-background {
+  top: 0;
+}
+#black-band {
+  background-color: black;
+  height: 115px;
+}
+#white-touch {
+  height: 1px;
+  background-color: white;
+}
+#gradient-band {
+  background: -webkit-linear-gradient($gradientGray, white); /* For Safari */
+  background: -o-linear-gradient($gradientGray, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($gradientGray, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($gradientGray, white); /* Standard syntax */
+  height: 250px;
+} 
+#container-wrapper {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 50px;
+  background-color: rgba(255,255,255,.3);
+  border: 1px solid rgba(255,255,255,.3);
+}
+.container {
+  background-color: white;
+}
+header {
+}
+footer {
+  margin-top: 30px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+  a {
+    color: $grayLight;
+    &:hover {
+      color: $grayLight;
+    }
+  }
+  p {
+    line-height: .5;
+    text-align: center;
+  }
+}
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+.field_with_errors {
+  @extend .control-group !optional;
+  @extend .error !optional;
+}
