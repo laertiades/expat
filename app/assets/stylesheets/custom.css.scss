@@ -5,6 +5,8 @@
 $grayMediumLight: #eaeaea;
 $gradientGray: #CCC;
 $grayblue: #223355;
+$textlight: #888;
+$textdark: #666;
 
 .center {text-align: center;}
 .w100   {width: 100%;}
@@ -13,6 +15,7 @@ $grayblue: #223355;
 .pa     {position: absolute;}
 .clear  {clear: both;}
 .fixed  {position: fixed;}
+.bump-down {margin-top: 20px;}
 
 @mixin border-radius ($radius) {
   -webkit-border-radius: $radius;
@@ -47,6 +50,11 @@ $grayblue: #223355;
   background: linear-gradient($gradientGray, white); /* Standard syntax */
   height: 250px;
 } 
+header {
+  .navbar {
+    margin: 5px;
+  }
+}
 #container-wrapper {
   display: inline-block;
   padding: 10px;
@@ -58,9 +66,13 @@ $grayblue: #223355;
   background-color: white;
   @include shadow;
 }
-header {
-  .navbar {
-    margin: 5px;
+.body-content {
+  p {
+    text-align: left;
+    color: $textlight;
+  }
+  h1 {
+    color: $textdark;
   }
 }
 footer {
