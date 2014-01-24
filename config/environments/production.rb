@@ -78,7 +78,7 @@ Expat::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.site = 'expatcpa.com'
+  config.site = 'safe-anchorage-1218.herokuapp.com'
 
   config.action_mailer.smtp_settings = {
     :address              => "smtp.sendgrid.net",
