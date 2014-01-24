@@ -4,6 +4,7 @@
 
 $grayMediumLight: #eaeaea;
 $gradientGray: #CCC;
+$grayblue: #223355;
 
 .center {text-align: center;}
 .w100   {width: 100%;}
@@ -24,9 +25,9 @@ $gradientGray: #CCC;
   box-sizing: border-box;
 }
 @mixin shadow {
-  box-shadow: 5px 5px 3px 0 #999;
--moz-box-shadow: 5px 5px 3px 0 #999;
--webkit-box-shadow: 5px 5px 3px 0 #999;
+  box-shadow: 0 0 3px 0 #999;
+-moz-box-shadow: 0 0 3px 0 #999;
+-webkit-box-shadow: 0 0 3px 0 #999;
 }
 #whole-background {
   top: 0;
@@ -55,8 +56,12 @@ $gradientGray: #CCC;
 }
 .container {
   background-color: white;
+  @include shadow;
 }
 header {
+  .navbar {
+    margin: 5px;
+  }
 }
 footer {
   margin-top: 30px;
@@ -89,8 +94,4 @@ footer {
     list-style: none;
     margin: 0 0 18px 0;
   }
-}
-.field_with_errors {
-  @extend .control-group !optional;
-  @extend .error !optional;
 }

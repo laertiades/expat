@@ -1,3 +1,18 @@
 <header>
-  <%= image_tag "expatcpa_banner.jpg" %>
+  <%= image_tag "expatcpa_banner.jpg", class: "w100" %>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <nav> 
+	<ul class="nav">
+	  <% Cms::Site.find_by_hostname(Expat::Application.config.site).pages.root.children.published.each do |page| %>
+	    <% unless (page.label == 'Property Listings') || page.label.index('Corner') %>
+	      <li class="cameo"><%= link_to page.label, page.full_path %></li>
+	    <% end %>
+	  <% end %>
+	  <% page = Cms::Site.find_by_hostname(Expat::Application.config.site).pages.root %>
+          <li><%= link_to page.label, page.full_path %></li>
+	</ul>
+      </nav>
+    </div>
+  </div>
 </header>
