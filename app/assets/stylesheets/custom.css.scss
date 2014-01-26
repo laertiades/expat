@@ -6,9 +6,9 @@ $grayMediumLight: #eaeaea;
 $gradientGray: #CCC;
 $grayblue: #223355;
 $textlight: #888;
-$textdark: #666;
+$textdark: #777;
 
-.center {text-align: center;}
+.center {text-align: center; margin-left: auto;}
 .w100   {width: 100%;}
 .w50    {width: 50%;}
 .pr     {position: relative;}
@@ -16,6 +16,10 @@ $textdark: #666;
 .clear  {clear: both;}
 .fixed  {position: fixed;}
 .bump-down {margin-top: 20px;}
+.italic {font-style: italic;}
+.left   {text-align: left;}
+.dark   {color: $textdark;}
+.sub-heading {font-size: 1.2em; font-weight: 700; color: $textdark;}
 
 @mixin border-radius ($radius) {
   -webkit-border-radius: $radius;
@@ -67,12 +71,58 @@ header {
   @include shadow;
 }
 #body-content {
+  font-family: arial,verdana,sans-serif;
   p {
+    font-size: .9em;
     text-align: left;
-    color: $textlight;
+    color: $textdark;
+    font-weight: 300;
   }
   h1 {
     color: $textdark;
+    font-size: 1.4em;
+    line-height: 1.5;
+  }
+  h3 {
+    line-height: 1.7;
+    font-size: .9em;
+    color: $textdark; 
+  }
+  .bubble {
+    background-image: image-url("bubble.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 250px;
+    .exerpt {
+      text-align: left;
+      width: 78%;
+      margin-left: 5%;
+      height: 170px;
+      padding: 5%;
+      overflow-y: hidden;
+    }
+  }
+  .head-shot {
+    border: solid $grayblue thin;
+    width: 45%;
+    @include shadow;
+    margin-bottom: 2%;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  #worker {
+    img {
+      border: solid $grayblue thin;
+      @include shadow;
+    }
+    .fl {
+      float: left;
+      width: 50%;
+      margin-right: 4%;
+      margin-top: 80px;
+    }
   }
 }
 footer {

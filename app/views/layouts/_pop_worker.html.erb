@@ -1,0 +1,5 @@
+<% worker = @cms_site.files.images.for_category('lgworker').sort_by(&:label).first %>
+<% unless worker.blank? %>
+<%= image_tag(worker.file.url, class: "w100") %>
+<%= worker.description.html_safe %>
+<% end %>

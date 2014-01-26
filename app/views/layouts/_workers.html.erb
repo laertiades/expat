@@ -1,0 +1,3 @@
+<% @cms_site.files.images.for_category('smworker').sort_by(&:label).each do |fl| %>
+  <%= image_tag(fl.file.url, class: "head-shot button-fade", onClick: "swapWorker('#{fl.label}')".html_safe) %>
+<% end %>

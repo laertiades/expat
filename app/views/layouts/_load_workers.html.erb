@@ -1,0 +1,10 @@
+imageLinks(".button-fade");
+<% res = "" %>
+<% @cms_site.files.images.for_category('lgworker').each do |snip| %>
+  <% res += '"' + snip.label + '": [' %>
+  <% res += '"' + snip.file.url + '", ' %>
+  <% res += '"' %>
+  <% res += Jhelp.escape_js snip.description %>
+  <% res += '"], ' %>
+<% end %>
+  workerSelector({<%= res.html_safe %>});

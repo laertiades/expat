@@ -14,9 +14,8 @@
     </div>
   </body>
   <% unless @cms_page.blank? || cms_page_content(:function_script).blank? %>
-    <% result = cms_page_content(:function_script) %>
     <script>
-      <%= result + '();' %>
+      <%= cms_page_content(:function_script) %>
     </script>
   <% end %>
 </html>
