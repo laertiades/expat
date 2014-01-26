@@ -1,3 +1,5 @@
+<% meta [:name => 'msapplication-TileColor', :content => "#FFFFFF"],
+	[:name => 'msapplication-TileImage', :content => asset_path('favicon-144.png')] %>
 <head>
   <% if @cms_page.blank? then %>
   <%= metamagic :title => full_title(yield(:title)),
@@ -7,6 +9,7 @@
 		:description => cms_page_content(:seo_description) %>
   <% end %>
   <%= favicon_link_tag 'favicon.ico' %>
+  <%= favicon_link_tag 'favicon-152.png', rel: 'apple-touch-icon-precomposed', type: 'image/png' %>
   <%= stylesheet_link_tag "application", media: "all",
 					  "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>

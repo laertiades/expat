@@ -12,10 +12,10 @@
         <%= render 'layouts/standard_container' %>
       </div>
     </div>
+    <% unless @cms_page.blank? || cms_page_content(:function_script).blank? %>
+      <script>
+	<%= cms_page_content(:function_script) %>
+      </script>
+    <% end %>
   </body>
-  <% unless @cms_page.blank? || cms_page_content(:function_script).blank? %>
-    <script>
-      <%= cms_page_content(:function_script) %>
-    </script>
-  <% end %>
 </html>
