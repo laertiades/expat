@@ -7,6 +7,23 @@ $gradientGray: #CCC;
 $grayblue: #223355;
 $textlight: #888;
 $textdark: #777;
+$shadowColor: #999;
+
+@mixin border-radius ($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@mixin shadow ($spread) {
+  box-shadow: 0 0 3px $spread $shadowColor;
+-moz-box-shadow: 0 0 3px $spread $shadowColor;
+-webkit-box-shadow: 0 0 3px $spread $shadowColor;
+}
 
 .center {text-align: center; margin-left: auto;}
 .w100   {width: 100%;}
@@ -20,22 +37,8 @@ $textdark: #777;
 .left   {text-align: left;}
 .dark   {color: $textdark;}
 .sub-heading {font-size: 1.2em; font-weight: 700; color: $textdark;}
+.shadow {@include shadow(5px);}
 
-@mixin border-radius ($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-          border-radius: $radius;
-}
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-@mixin shadow {
-  box-shadow: 0 0 3px 0 #999;
--moz-box-shadow: 0 0 3px 0 #999;
--webkit-box-shadow: 0 0 3px 0 #999;
-}
 #whole-background {
   top: 0;
 }
@@ -68,7 +71,7 @@ header {
 }
 .container {
   background-color: white;
-  @include shadow;
+  @include shadow(0);
 }
 #body-content {
   font-family: arial,verdana,sans-serif;
@@ -88,6 +91,9 @@ header {
     font-size: .9em;
     color: $textdark; 
   }
+  h6 {
+    margin: 0;
+  }
   .bubble {
     background-image: image-url("bubble.jpg");
     width: 100%;
@@ -95,18 +101,19 @@ header {
     background-size: contain;
     height: 250px;
     .exerpt {
+      font-style: oblique;
+      color: black; 
+      font-family:"Times New Roman", Times, serif;
       text-align: left;
-      width: 78%;
-      margin-left: 5%;
-      height: 170px;
-      padding: 5%;
+      height: 110px;
+      padding: 30px 60px 30px 50px;
       overflow-y: hidden;
     }
   }
   .head-shot {
     border: solid $grayblue thin;
     width: 45%;
-    @include shadow;
+    @include shadow(0);
     margin-bottom: 2%;
     &:hover {
       cursor: pointer;
@@ -115,7 +122,7 @@ header {
   #worker {
     img {
       border: solid $grayblue thin;
-      @include shadow;
+      @include shadow(0);
     }
     .fl {
       float: left;

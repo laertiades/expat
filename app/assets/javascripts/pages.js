@@ -24,7 +24,6 @@ function testimony2() {
 
 function workerSelector(workers) {
   workerList = workers;
-  alert("here");
 }
 
 function swapWorker(label) {
