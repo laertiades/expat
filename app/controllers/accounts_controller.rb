@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+  http_basic_authenticate_with name: ENV['TRACKER_USERNAME'], password: ENV['TRACKER_PASSWORD']
   layout "tracker"
   def new
     @account = Account.new

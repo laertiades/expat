@@ -1,8 +1,53 @@
 <% provide(:title, 'All accounts') %>
 <h1>All Accounts</h1>
 
-<ul class="accounts">
+<table class="table">
+  <tr>
+    <th>name</th>
+    <th>manager</th>
+    <th>consultant</th>
+    <th>received</th>
+    <th>assigned</th>
+    <th>completed</th>
+    <th>filed</th>
+    <th>basic</th>
+    <th>state</th>
+    <th>1116</th>
+    <th>Sch A</th>
+    <th>Sch C</th>
+    <th>Sch D</th>
+    <th>Sch E</th>
+    <th>Extension</th>
+    <th>TD F</th>
+    <th>8938</th>
+    <th>5471</th>
+    <th>sent</th>
+    <th>fee</th>
+    <th>Total Cost</th>
+  </tr>
   <% @accounts.each do |acc| %>
-    <li><%= acc.name %></li>
+  <tr>
+    <td><%= acc.name %></td>
+    <td><%= acc.manager.name %></td>
+    <td><%= acc.consultant.name %></td>
+    <td><%= acc.received.strftime("%d %b") unless acc.received.blank? %></td>
+    <td><%= acc.assigned.strftime("%d %b") unless acc.assigned.blank? %></td>
+    <td><%= acc.completed.strftime("%d %b") unless acc.completed.blank? %></td>
+    <td><%= acc.sent.strftime("%d %b") unless acc.sent.blank? %></td>
+    <td><%= acc.filed.strftime("%d %b") unless acc.filed.blank? %></td>
+    <td><%= acc.basic %></td>
+    <td><%= acc.state %></td>
+    <td><%= acc.f1116 %></td>
+    <td><%= acc.a %></td>
+    <td><%= acc.c %></td>
+    <td><%= acc.d %></td>
+    <td><%= acc.e %></td>
+    <td><%= acc.extension %></td>
+    <td><%= acc.f %></td>
+    <td><%= acc.f8938 %></td>
+    <td><%= acc.f5471 %></td>
+    <td><%= number_to_currency(acc.fee) %></td>
+    <td><%= number_to_currency(acc.cost) %></td>
+  </tr>
   <% end %>
-</ul>
+</table>

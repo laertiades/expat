@@ -2,9 +2,9 @@
 <h1>Create New Account</h1>
 
 <div id="tight-form" class="row">
+  <%= render 'shared/account_messages' %>
   <div class="span6">
     <%= form_for(@account) do |f| %>
-      <%= render 'shared/account_messages' %>
 
       <%= f.label :name, "Account Name" %>
       <%= f.text_field :name %>
