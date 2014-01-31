@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag "application", media: "all",
+					    "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+  </head>
+  <body class="center">
+    <div id="whole-background" class="w100 pa">
+      <div class="w100" id="black-band"></div>
+      <div class="w100" id="white-touch"></div>
+      <div class="w100" id="gradient-band"></div>
+    </div>
+    <div class="pr">
+      <div id="container-wrapper">
+	<div class="container">
+	  <% flash.each do |key, value| %>
+	    <div class="alert alert-<%= key %>"><%= value %></div>
+	  <% end %>
+	  <div class="clear"></div>
+	  <header>
+	    <%= image_tag "expatcpa_banner.jpg", class: "w100" %>
+	    <div class="navbar">
+	      <div class="navbar-inner">
+		<nav> 
+		  <ul class="nav">
+		    <li class="cameo"><%= link_to "create manager", '/managers/new' %></li>
+		    <li class="cameo"><%= link_to "create consultant", '/consultants/new' %></li>
+		    <li class="cameo"><%= link_to "create account", '/accounts/new' %></li>
+		  </ul>
+		</nav>
+	      </div>
+	    </div>
+	  </header>
+	  <%= yield %>
+	  <%= render 'layouts/footer' %>
+	  <%= debug(params) if Rails.env.development? %>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>

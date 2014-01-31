@@ -11,10 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140122020126) do
+ActiveRecord::Schema.define(version: 20140130234647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: true do |t|
+    t.string   "name"
+    t.integer  "manager_id"
+    t.integer  "consultant_id"
+    t.datetime "received"
+    t.datetime "assigned"
+    t.datetime "completed"
+    t.datetime "sent"
+    t.datetime "filed"
+    t.boolean  "basic"
+    t.boolean  "state"
+    t.boolean  "f1116"
+    t.boolean  "a"
+    t.boolean  "c"
+    t.boolean  "d"
+    t.boolean  "e"
+    t.boolean  "extension"
+    t.boolean  "f"
+    t.boolean  "f8938"
+    t.boolean  "f5471"
+    t.decimal  "fee",           precision: 6, scale: 2, default: 0.0
+    t.decimal  "cost",          precision: 6, scale: 2, default: 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "accounts", ["consultant_id"], name: "index_accounts_on_consultant_id", using: :btree
+  add_index "accounts", ["manager_id"], name: "index_accounts_on_manager_id", using: :btree
 
   create_table "cms_blocks", force: true do |t|
     t.integer  "page_id",    null: false
@@ -132,5 +161,23 @@ ActiveRecord::Schema.define(version: 20140122020126) do
 
   add_index "cms_snippets", ["site_id", "identifier"], name: "index_cms_snippets_on_site_id_and_identifier", unique: true, using: :btree
   add_index "cms_snippets", ["site_id", "position"], name: "index_cms_snippets_on_site_id_and_position", using: :btree
+
+  create_table "consultants", force: true do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "consultants", ["name"], name: "index_consultants_on_name", unique: true, using: :btree
+
+  create_table "managers", force: true do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "managers", ["name"], name: "index_managers_on_name", unique: true, using: :btree
 
 end

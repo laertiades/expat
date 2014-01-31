@@ -1,0 +1,8 @@
+<% provide(:title, 'All accounts') %>
+<h1>All Accounts</h1>
+
+<ul class="accounts">
+  <% @accounts.each do |acc| %>
+    <li><%= acc.name %></li>
+  <% end %>
+</ul>

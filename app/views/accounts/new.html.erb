@@ -1,0 +1,92 @@
+<% provide(:title, 'Create New Account') %>
+<h1>Create New Account</h1>
+
+<div id="tight-form" class="row">
+  <div class="span6">
+    <%= form_for(@account) do |f| %>
+      <%= render 'shared/account_messages' %>
+
+      <%= f.label :name, "Account Name" %>
+      <%= f.text_field :name %>
+      <div class="clear"></div>
+      
+      <%= f.label :manager_id, "Manager" %>
+      <%= f.collection_select(:manager_id, Manager.all, :id, :name) %>
+      <div class="clear"></div>
+
+      <%= f.label :consultant_id, "Consultant" %>
+      <%= f.collection_select(:consultant_id, Consultant.all, :id, :name) %>
+      <div class="clear"></div>
+      
+      <%= f.label :received, "Quest/Note Received" %>
+      <%= f.date_field :received %>
+      <div class="clear"></div>
+      
+      <%= f.label :assigned, "Return Assigned" %>
+      <%= f.date_field :assigned %>
+      <div class="clear"></div>
+      
+      <%= f.label :completed, "Return Completed" %>
+      <%= f.date_field :completed %>
+      <div class="clear"></div>
+      
+      <%= f.label :sent, "Sent to Client" %>
+      <%= f.date_field :sent %>
+      <div class="clear"></div>
+      
+      <%= f.label :filed, "E Filed" %>
+      <%= f.date_field :filed %>
+      <div class="clear"></div>
+      
+      
+  </div>
+  <div class="span6">
+      <%= f.check_box(:basic) %>
+      <%= f.label(:basic, "1040/2555 Basic") %>
+      <div class="clear"></div>
+
+      <%= f.check_box(:state) %>
+      <%= f.label(:state, "State") %>
+      <div class="clear"></div>
+
+      <%= f.check_box(:f1116) %>
+      <%= f.label(:f1116, "Form 1116") %>
+      <div class="clear"></div>
+
+      <%= f.check_box(:a) %>
+      <%= f.label(:a, "Schedule A") %>
+      <div class="clear"></div>
+
+      <%= f.check_box(:c) %>
+      <%= f.label(:c, "Schedule C") %>
+      <div class="clear"></div>
+
+      <%= f.check_box(:d) %>
+      <%= f.label(:d, "Schedule D") %>
+      <div class="clear"></div>
+
+      <%= f.check_box(:e) %>
+      <%= f.label(:e, "Schedule E") %>
+      <div class="clear"></div>
+
+      <%= f.check_box(:extension) %>
+      <%= f.label(:extension, "Filing Extension") %>
+      <div class="clear"></div>
+
+      <%= f.check_box(:f) %>
+      <%= f.label(:f, "Form TD F 90-22.1") %>
+      <div class="clear"></div>
+
+      <%= f.check_box(:f8938) %>
+      <%= f.label(:f8938, "Form 8938") %>
+      <div class="clear"></div>
+
+      <%= f.check_box(:f5471) %>
+      <%= f.label(:f5471, "Form 5471") %>
+      <div class="clear"></div>
+
+  </div>
+  <div class="clear"></div>
+      <%= f.submit "Create Account", class: "btn btn-large btn-primary" %>
+    <% end %>
+</div>

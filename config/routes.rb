@@ -1,4 +1,10 @@
 Expat::Application.routes.draw do
+  # get "consultants/new"
+  # get "managers/new"
+  # get "accounts/new"
+  resources :managers
+  resources :accounts
+  resources :consultants
   comfy_route :cms_admin, :path => '/corner-console'
 
   # The priority is based upon order of creation: first created -> highest priority.

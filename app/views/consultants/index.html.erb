@@ -1,0 +1,8 @@
+<% provide(:title, 'All consultants') %>
+<h1>All Consultants</h1>
+
+<ul class="consultants">
+  <% @consultants.each do |con| %>
+    <li><%= con.name %></li>
+  <% end %>
+</ul>

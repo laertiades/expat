@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.0'
 
 gem 'rails', '~> 4.0.2'
 gem 'pg', '~> 0.17.1'
@@ -18,7 +18,7 @@ gem "mobile-fu", "~> 1.2.2"
 gem 'aws-sdk'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 group :production do
   gem 'rails_12factor', '0.0.2'
