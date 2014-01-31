@@ -6,6 +6,7 @@ class AccountsController < ApplicationController
   end
   def index
     @accounts = Account.all
+    render layout: "widescreen"
   end
   def create
     @account = Account.new(account_params)
