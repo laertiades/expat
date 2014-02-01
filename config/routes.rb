@@ -5,7 +5,7 @@ Expat::Application.routes.draw do
   resources :managers
   resources :accounts
   resources :consultants
-  comfy_route :cms_admin, :path => '/corner-console'
+  comfy_route :cms_admin, :path => "/#{ENV['CMS_FOLDER']}"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

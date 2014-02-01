@@ -96,5 +96,5 @@ end
 
 # Default credentials for ComfortableMexicanSofa::HttpAuth
 # YOU REALLY WANT TO CHANGE THIS BEFORE PUTTING YOUR SITE LIVE
-ComfortableMexicanSofa::HttpAuth.username = 'HarveyCorner'
-ComfortableMexicanSofa::HttpAuth.password = 'comfY1031'
+ComfortableMexicanSofa::HttpAuth.username = ENV['CMS_USERNAME']
+ComfortableMexicanSofa::HttpAuth.password = ENV['CMS_PASSWORD']
