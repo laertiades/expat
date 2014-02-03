@@ -28,8 +28,8 @@
   <% @accounts.each do |acc| %>
   <tr>
     <td><%= link_to acc.name, edit_account_path(acc) %></td>
-    <td><%= acc.manager.name %></td>
-    <td><%= acc.consultant.name %></td>
+    <td><%= acc.manager.name unless acc.manager.blank? %></td>
+    <td><%= acc.consultant.name unless acc.consultant.blank? %></td>
     <td><%= acc.received.strftime("%d %b") unless acc.received.blank? %></td>
     <td><%= acc.assigned.strftime("%d %b") unless acc.assigned.blank? %></td>
     <td><%= acc.completed.strftime("%d %b") unless acc.completed.blank? %></td>

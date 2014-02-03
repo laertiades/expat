@@ -1,12 +1,14 @@
 class AccountsController < ApplicationController
   http_basic_authenticate_with name: ENV['TRACKER_USERNAME'], password: ENV['TRACKER_PASSWORD']
   layout "tracker"
-  def new
-    @account = Account.new
-  end
+
   def index
     @accounts = Account.all
     render layout: "widescreen"
+  end
+
+  def new
+    @account = Account.new
   end
   def create
     @account = Account.new(account_params)
@@ -30,7 +32,12 @@ class AccountsController < ApplicationController
       render 'edit'
     end
   end
-    
+
+  def destroy
+    Account.find(params[:id]).destroy
+    flash[:success] = "Account destroyed permanently"
+    redirect_to '/accounts'
+  end
 
   private
 

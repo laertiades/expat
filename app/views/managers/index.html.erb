@@ -1,8 +1,12 @@
 <% provide(:title, 'All managers') %>
 <h1>All Managers</h1>
 
-<ul class="managers">
-  <% @managers.each do |man| %>
-    <li><%= man.name %></li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="span6 offset4">
+    <ul class="consultants">
+      <% @managers.each do |man| %>
+	<li><%= link_to man.name, edit_manager_path(man) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

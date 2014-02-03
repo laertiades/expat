@@ -1,0 +1,16 @@
+<% provide(:title, 'Edit Consultant') %>
+<h1>Editing <%= @consultant.name %></h1>
+
+<div id="consultant" class="row">
+  <div class="span6 offset3">
+    <%= form_for(@consultant) do |f| %>
+      <%= render 'shared/consultant_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.submit "Update #{@consultant.name}", class: "btn btn-large btn-primary" %>
+    <% end %>
+    <%= link_to "Delete #{@consultant.name}", @consultant, method: :delete, data: { confirm: "STOP!!  This action is irreversible!" }, class: "btn btn-danger" %>
+  </div>
+</div>
