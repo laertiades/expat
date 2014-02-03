@@ -27,7 +27,7 @@
   </tr>
   <% @accounts.each do |acc| %>
   <tr>
-    <td><%= acc.name %></td>
+    <td><%= link_to acc.name, edit_account_path(acc) %></td>
     <td><%= acc.manager.name %></td>
     <td><%= acc.consultant.name %></td>
     <td><%= acc.received.strftime("%d %b") unless acc.received.blank? %></td>
@@ -35,17 +35,17 @@
     <td><%= acc.completed.strftime("%d %b") unless acc.completed.blank? %></td>
     <td><%= acc.sent.strftime("%d %b") unless acc.sent.blank? %></td>
     <td><%= acc.filed.strftime("%d %b") unless acc.filed.blank? %></td>
-    <td class="checks"><%= "x" if acc.basic %></td>
-    <td class="checks"><%= "x" if acc.state %></td>
-    <td class="checks"><%= "x" if acc.f1116 %></td>
-    <td class="checks"><%= "x" if acc.a %></td>
-    <td class="checks"><%= "x" if acc.c %></td>
-    <td class="checks"><%= "x" if acc.d %></td>
-    <td class="checks"><%= "x" if acc.e %></td>
-    <td class="checks"><%= "x" if acc.extension %></td>
-    <td class="checks"><%= "x" if acc.f %></td>
-    <td class="checks"><%= "x" if acc.f8938 %></td>
-    <td class="checks"><%= "x" if acc.f5471 %></td>
+    <td class="checks"><%= "299" if acc.basic %></td>
+    <td class="checks"><%= "175" if acc.state %></td>
+    <td class="checks"><%= "125" if acc.f1116 %></td>
+    <td class="checks"><%= "75" if acc.a %></td>
+    <td class="checks"><%= "100" if acc.c %></td>
+    <td class="checks"><%= "75" if acc.d %></td>
+    <td class="checks"><%= "75" if acc.e %></td>
+    <td class="checks"><%= "75" if acc.extension %></td>
+    <td class="checks"><%= "75" if acc.f %></td>
+    <td class="checks"><%= "75" if acc.f8938 %></td>
+    <td class="checks"><%= "600" if acc.f5471 %></td>
     <td><%= number_to_currency(acc.fee) %></td>
     <td><%= number_to_currency(acc.cost) %></td>
   </tr>

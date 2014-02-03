@@ -11,17 +11,7 @@
     <div class="container-fluid">
       <header>
 	<%= image_tag "expatcpa_banner.jpg" %>
-	<div class="navbar">
-	  <div class="navbar-inner">
-	    <nav> 
-	      <ul class="nav">
-		<li class="cameo"><%= link_to "create manager", '/managers/new' %></li>
-		<li class="cameo"><%= link_to "create consultant", '/consultants/new' %></li>
-		<li class="cameo"><%= link_to "create account", '/accounts/new' %></li>
-	      </ul>
-	    </nav>
-	  </div>
-	</div>
+	<%= render 'layouts/track_nav' %>
       </header>
       <% flash.each do |key, value| %>
 	<div class="alert alert-<%= key %>"><%= value %></div>
