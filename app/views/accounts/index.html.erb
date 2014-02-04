@@ -25,7 +25,7 @@
     <th>fee</th>
     <th>Total Cost</th>
   </tr>
-  <% @accounts.each do |acc| %>
+  <% @accounts.order("lower(name) ASC").each do |acc| %>
   <tr>
     <td><%= link_to acc.name, edit_account_path(acc) %></td>
     <td><%= acc.manager.name unless acc.manager.blank? %></td>
