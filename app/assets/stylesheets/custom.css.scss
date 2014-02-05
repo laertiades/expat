@@ -68,18 +68,12 @@ header {
     position: relative;
     height: 270px;
   }
-  #ban-pic1, #ban-pic2 {
+  .ban-pic {
     width: 100%;
     position: absolute;
     top: 20px;
     left: 0;
     @include shadow(0);
-  }
-  #ban-pic1 {
-    z-index: 2;
-  }
-  #ban-pic2 {
-    z-index: 1;
   }
 }
 #container-wrapper {

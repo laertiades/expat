@@ -1,37 +1,29 @@
-images = ["https://s3.amazonaws.com/expatcpa/banner/expat1.jpg", "https://s3.amazonaws.com/expatcpa/banner/expat2.jpg", "https://s3.amazonaws.com/expatcpa/banner/expat3.jpg", "https://s3.amazonaws.com/expatcpa/banner/expat4.jpg", "https://s3.amazonaws.com/expatcpa/banner/w600.jpg", "https://s3.amazonaws.com/expatcpa/banner/w601.jpg"]
+images = ["https://s3.amazonaws.com/expatcpa/banner/expat1.jpg", "https://s3.amazonaws.com/expatcpa/banner/expat2.jpg", "https://s3.amazonaws.com/expatcpa/banner/expat3.jpg", "https://s3.amazonaws.com/expatcpa/banner/expat4.jpg", "https://s3.amazonaws.com/expatcpa/banner/expat5.jpg"]
 preloadedImgs = []
 counter = 0
 
 for num in [0..(images.length-1)]
   preloadedImgs[num] = new Image()
   preloadedImgs[num].src = images[num]
-
-startGallery = () ->
+  
+gallery = ->
+  $('#gallery').prepend '<img class="ban-pic" />'
+  $('.ban-pic:first').attr "src", preloadedImgs[counter].src
   ++ counter
   if counter >= preloadedImgs.length then counter = 0
-  document.getElementById("ban-pic2").src = preloadedImgs[counter].src
-  stepOne()
-
-stepOne = () ->
-  $('#ban-pic1').fadeOut(4000,stepTwo);
+  $('.ban-pic:last').fadeOut 1000, ->
+    if $('.ban-pic').length >= 2 then $('.ban-pic:last').remove()
   
-stepTwo = () ->
-  $('#ban-pic1').css("z-index","1")
-  $('#ban-pic2').css("z-index","2")
-  ++ counter
-  if counter >= preloadedImgs.length then counter = 0
-  document.getElementById("ban-pic1").src = preloadedImgs[counter].src
-  $('#ban-pic1').show()
-  stepThree()
-  
-stepThree = () ->
-  $('#ban-pic2').fadeOut(4000,stepFour)
-  
-stepFour = () ->
-  $('#ban-pic1').css("z-index","2")
-  $('#ban-pic2').css("z-index","1")
-  $('#ban-pic2').show()
-  startGallery()
-
 $ ->
-  startGallery()
+  $('#gallery').append '<img class="ban-pic" />'
+  $('.ban-pic:first').attr "src", preloadedImgs[0].src
+  counter = 1
+  setInterval gallery, 6000
+
+reload = ->
+  $('#gallery').append '<img class="ban-pic" />'
+  $('.ban-pic:first').attr "src", preloadedImgs[counter].src
+  ++ counter
+  if counter >= preloadedImgs.length then counter = 0
+  
+$(document).on('page:load', reload)
