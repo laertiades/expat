@@ -10,13 +10,22 @@
     <div class="navbar-inner">
       <nav> 
 	<ul class="nav">
-	  <% Cms::Site.find_by_hostname(Expat::Application.config.site).pages.root.children.published.each do |page| %>
-	    <% unless (page.label == 'Property Listings') || page.label.index('Corner') %>
-	      <li class="cameo"><%= link_to page.label, page.full_path %></li>
+	  <div>
+	    <% page = Cms::Site.find_by_hostname(Expat::Application.config.site).pages.root %>
+	    <li class="cameo"><%= link_to page.label, page.full_path %></li>
+	    <% Cms::Site.first.pages.root.children.published.each do |page| %>
+	      <li id="fat-menu" class="dropdown cameo">
+		<%= link_to page.label, page.full_path, class: "dropdown-toggle", :data => {:toggle => "dropdown"} %>
+		<% if page.children.published.any? %>
+		  <ul class="dropdown-menu">
+		    <% page.children.published.each do |child| %>
+		      <li><%= link_to child.label, child.full_path %></li>
+		    <% end %>
+		  </ul>
+		<% end %>
+	      </li>
 	    <% end %>
-	  <% end %>
-	  <% page = Cms::Site.find_by_hostname(Expat::Application.config.site).pages.root %>
-          <li><%= link_to page.label, page.full_path %></li>
+	  </div>
 	</ul>
       </nav>
     </div>
