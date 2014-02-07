@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140130234647) do
+ActiveRecord::Schema.define(version: 20140207192815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -137,12 +137,14 @@ ActiveRecord::Schema.define(version: 20140130234647) do
   add_index "cms_revisions", ["record_type", "record_id", "created_at"], name: "index_cms_revisions_on_rtype_and_rid_and_created_at", using: :btree
 
   create_table "cms_sites", force: true do |t|
-    t.string  "label",                       null: false
-    t.string  "identifier",                  null: false
-    t.string  "hostname",                    null: false
-    t.string  "path"
-    t.string  "locale",      default: "en",  null: false
-    t.boolean "is_mirrored", default: false, null: false
+    t.string   "label",                       null: false
+    t.string   "identifier",                  null: false
+    t.string   "hostname",                    null: false
+    t.string   "path"
+    t.string   "locale",      default: "en",  null: false
+    t.boolean  "is_mirrored", default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "cms_sites", ["hostname"], name: "index_cms_sites_on_hostname", using: :btree
