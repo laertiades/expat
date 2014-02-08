@@ -43,7 +43,7 @@ function swapWorker(label) {
       $("#worker img").removeClass("w100");
       $("#worker img").addClass("fl");
     }
-  $("#worker h2, #worker p, .clear").remove();
+  $('#worker').children().not('img').remove();
   $("#worker").append(workerList[label][1]);
   $("#worker").append('<div class="clear"></div>');
   }
