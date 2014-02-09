@@ -48,6 +48,10 @@
     <%= f.label(:a, "Schedule A") %>
     <div class="clear"></div>
 
+    <%= f.check_box(:b) %>
+    <%= f.label(:b, "Schedule B") %>
+    <div class="clear"></div>
+
     <%= f.check_box(:c) %>
     <%= f.label(:c, "Schedule C") %>
     <div class="clear"></div>
@@ -74,6 +78,10 @@
 
     <%= f.check_box(:f5471) %>
     <%= f.label(:f5471, "Form 5471") %>
+    <div class="clear"></div>
+
+    <%= f.label :name, "Misc Expenses" %>
+    <%= f.text_field :misc %>
     <div class="clear"></div>
 </div>
 <div class="clear"></div>

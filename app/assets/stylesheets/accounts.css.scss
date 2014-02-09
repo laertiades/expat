@@ -9,13 +9,12 @@
 }
 
 #tight-form {
-  input[type=text], input[type=date], textarea, select, .uneditable-input {
+  input[type=text], input[type=date], select {
     border: 1px solid #bbb;
     margin-bottom: 15px;
     @include box_sizing;
-    float: right;
-  }
-  input[type=text], input[type=date] {
+    float: left;
+    width: 40%;
     height: 30px;
   }
   label {
@@ -24,9 +23,6 @@
     margin-right: 4%;
     text-align: right;
     float: left;
-  }
-  select, .uneditable-input {
-    width: 45%;
   }
   label {
     width: 50%;
@@ -41,5 +37,8 @@
 .table {
   td.checks {
     text-align: center;
+  }
+  thead {
+    position: fixed;
   }
 }

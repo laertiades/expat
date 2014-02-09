@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140207192815) do
+ActiveRecord::Schema.define(version: 20140208214117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20140207192815) do
     t.decimal  "cost",          precision: 6, scale: 2, default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "misc",          precision: 6, scale: 2, default: 0.0
+    t.boolean  "b"
   end
 
   add_index "accounts", ["consultant_id"], name: "index_accounts_on_consultant_id", using: :btree
