@@ -38,7 +38,19 @@
   td.checks {
     text-align: center;
   }
-  thead {
-    position: fixed;
+}
+ul.pagination {
+  li {
+    display: inline;
+    margin-right: 15px;
+  }
+}
+.dataTables_length label, .dataTables_info {
+  margin-left: 20px;
+}
+
+.dataTables_filter {
+  .btn {
+    margin-left: 20px;
   }
 }

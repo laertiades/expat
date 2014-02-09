@@ -1,9 +1,8 @@
 <% provide(:title, 'All accounts') %>
-<h1>All Accounts</h1>
-
-<table class="table">
+<table class="table datatable">
   <thead>
     <tr>
+      <th></th>
       <th>name</th>
       <th>manager</th>
       <th>consultant</th>
@@ -27,18 +26,25 @@
       <th>misc</th>
       <th>fee</th>
       <th>Total Cost</th>
+      <th>Deposit</th>
+      <th>Payment</th>
+      <th>Balance</th>
     </tr>
   </thead>
   <tbody>
   <% i = 0
   fees = 0
   costs = 0
+  balances = 0
   @accounts.order("lower(name) ASC").each do |acc|
   i = i + 1
   fees = fees + acc.fee
-  costs = costs + acc.cost %>
+  costs = costs + acc.cost
+  balance = (acc.fee || 0) - 299 - (acc.payment || 0)
+  balances = balances + balance %>
   <tr>
-    <td><%= link_to "#{i} #{acc.name}", edit_account_path(acc) %></td>
+    <td><%= i %></td>
+    <td><%= link_to acc.name, edit_account_path(acc) %></td>
     <td><%= acc.manager.name unless acc.manager.blank? %></td>
     <td><%= acc.consultant.name unless acc.consultant.blank? %></td>
     <td><%= acc.received.strftime("%b %d") unless acc.received.blank? %></td>
@@ -61,11 +67,19 @@
     <td><%= number_to_currency(acc.misc) %></td>
     <td><%= number_to_currency(acc.fee) %></td>
     <td><%= number_to_currency(acc.cost) %></td>
+    <td>-299</td>
+    <td>-<%= number_to_currency(acc.payment) %></td>
+    <td><%= number_to_currency(balance) %></td>
   </tr>
-  </tbody>
   <% end %>
-  <tr><%= ("<td></td>" * 21).html_safe %>
-    <td><%= number_to_currency(fees) %></td>
-    <td><%= number_to_currency(costs) %></td>
-  </tr>
+  </tbody>
+  <tfoot>
+    <tr><%= ("<td></td>" * 22).html_safe %>
+      <td><%= number_to_currency(fees) %></td>
+      <td><%= number_to_currency(costs) %></td>
+      <td></td>
+      <td></td>
+      <td><%= number_to_currency(balances) %></td>
+    </tr>
+  </tfoot>
 </table>
