@@ -40,7 +40,7 @@
   i = i + 1
   fees = fees + acc.fee
   costs = costs + acc.cost
-  balance = (acc.fee || 0) - 299 - (acc.payment || 0)
+  balance = (acc.fee || 0) - (acc.deposit || 0) - (acc.payment || 0)
   balances = balances + balance %>
   <tr>
     <td><%= i %></td>
@@ -67,7 +67,7 @@
     <td><%= number_to_currency(acc.misc) %></td>
     <td><%= number_to_currency(acc.fee) %></td>
     <td><%= number_to_currency(acc.cost) %></td>
-    <td>-299</td>
+    <td>-<%= number_to_currency(acc.deposit) %></td>
     <td>-<%= number_to_currency(acc.payment) %></td>
     <td><%= number_to_currency(balance) %></td>
   </tr>

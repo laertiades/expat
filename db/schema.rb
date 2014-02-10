@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140209170351) do
+ActiveRecord::Schema.define(version: 20140210134521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140209170351) do
     t.decimal  "misc",          precision: 6, scale: 2, default: 0.0
     t.boolean  "b"
     t.decimal  "payment",       precision: 6, scale: 2, default: 0.0
+    t.decimal  "deposit",       precision: 6, scale: 2, default: 0.0
   end
 
   add_index "accounts", ["consultant_id"], name: "index_accounts_on_consultant_id", using: :btree

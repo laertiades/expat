@@ -5,7 +5,9 @@
 reload = ->
   filter = false
   height = window.innerHeight - 270
-  oTable = $('.datatable').dataTable({ "sScrollY": height, "bSort": false })
+  oTable = $('.datatable').dataTable({
+    "sScrollY": height,
+    "bSort": false })
   billableFilter = ( oSettings, aData, iDataIndex ) ->
     if !filter then true
     else if aData[6] == "" then false
