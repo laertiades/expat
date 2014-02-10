@@ -36,10 +36,14 @@
   fees = 0
   costs = 0
   balances = 0
+  deposits = 0
+  payments = 0
   @accounts.order("lower(name) ASC").each do |acc|
   i = i + 1
-  fees = fees + acc.fee
-  costs = costs + acc.cost
+  fees = fees + (acc.fee || 0)
+  costs = costs + (acc.cost || 0)
+  deposits = deposits + (acc.deposit || 0)
+  payments = payments + (acc.payment || 0)
   balance = (acc.fee || 0) - (acc.deposit || 0) - (acc.payment || 0)
   balances = balances + balance %>
   <tr>
@@ -77,8 +81,8 @@
     <tr><%= ("<td></td>" * 22).html_safe %>
       <td><%= number_to_currency(fees) %></td>
       <td><%= number_to_currency(costs) %></td>
-      <td></td>
-      <td></td>
+      <td>-<%= number_to_currency(deposits) %></td>
+      <td>-<%= number_to_currency(payments) %></td>
       <td><%= number_to_currency(balances) %></td>
     </tr>
   </tfoot>
