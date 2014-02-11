@@ -11,7 +11,7 @@ reload = ->
     "iDisplayLength": 50,
     "sDom": 'T<"clear">lfrtip',
     "oTableTools": {
-    "sSwfPath": "http://safe-anchorage-1218.herokuapp.com/swf/copy_csv_xls_pdf.swf",
+    "sSwfPath": "/swf/copy_csv_xls_pdf.swf",
     "aButtons": [ "copy", "print", "xls" ]
     },
     "bSort": false })

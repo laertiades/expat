@@ -11,7 +11,7 @@
       <nav> 
 	<ul class="nav">
 	  <div>
-	    <% page = Cms::Site.find_by_hostname(Expat::Application.config.site).pages.root %>
+	    <% page = Cms::Site.first.pages.root %>
 	    <li class="cameo"><%= link_to page.label, page.full_path %></li>
 	    <% Cms::Site.first.pages.root.children.published.each do |page| %>
 	      <li id="fat-menu" class="dropdown cameo">

@@ -1,0 +1,31 @@
+  <div id="loose-form" class="span6">
+    <%= form_for(@contact) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :company %>
+      <%= f.text_field :company %>
+
+      <%= f.label :local, "U.S. Residence City and State" %>
+      <%= f.text_field :local %>
+
+      <%= f.label :foreign, "Foreign Country of Residence" %>
+      <%= f.text_field :foreign %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :phone, "Phone (If you desire to be contacted by phone)" %>
+      <%= f.text_field :phone %>
+
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+
+      <%= f.submit "Send Message", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
