@@ -9,10 +9,20 @@ reload = ->
     "sScrollY": height,
     "aLengthMenu": [20, 50, 200, 1000],
     "iDisplayLength": 50,
-    "sDom": 'T<"clear">lfrtip',
+    "sDom": 'lTf<"clear">rtip',
     "oTableTools": {
     "sSwfPath": "/swf/copy_csv_xls_pdf.swf",
-    "aButtons": [ "copy", "print", "xls" ]
+    "aButtons": [
+		    "copy",
+		    "csv",
+		    "xls",
+		    {
+			    "sExtends": "pdf",
+			    "sPdfOrientation": "landscape",
+			    "sPdfMessage": "PDF Operation."
+		    }
+		    "print"
+	    ]
     },
     "bSort": false })
   billableFilter = ( oSettings, aData, iDataIndex ) ->
@@ -21,8 +31,6 @@ reload = ->
     else if aData[26] == "$0.00" then false
     else true
   $.fn.dataTableExt.afnFiltering.push billableFilter
-  $('div.DTTT_container').appendTo 'div.dataTables_filter'
-  $('.clear').insertAfter 'div.dataTables_filter'
   $('<button id="filter" class="btn btn-primary">Billable Accounts</button>').appendTo 'div.dataTables_filter'
   $('#filter').on "click", =>
     filter = !filter
