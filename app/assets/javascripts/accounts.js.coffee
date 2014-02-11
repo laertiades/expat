@@ -13,16 +13,19 @@ reload = ->
     "oTableTools": {
     "sSwfPath": "/swf/copy_csv_xls_pdf.swf",
     "aButtons": [
-		    "copy",
-		    "csv",
-		    "xls",
-		    {
-			    "sExtends": "pdf",
-			    "sPdfOrientation": "landscape",
-			    "sPdfMessage": "PDF Operation."
-		    }
-		    "print"
-	    ]
+      "copy",
+      "csv",
+      {
+      "sExtends": "xls",
+      "sFileName": "expatcpa_accounts.xls"
+      },
+      {
+      "sExtends": "pdf",
+      "sPdfOrientation": "landscape",
+      "sPdfMessage": "PDF Operation."
+      },
+      "print"
+    ]
     },
     "bSort": false })
   billableFilter = ( oSettings, aData, iDataIndex ) ->
