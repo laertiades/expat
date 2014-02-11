@@ -10,6 +10,14 @@
     margin-bottom: 15px;
   }
   label {
+    width: 90%;
     margin-bottom: 0;
+  }
+  input[type=checkbox] {
+    float: left;
+    margin-right: 10px;
+  }
+  input.btn {
+    margin-top: 20px;
   }
 }

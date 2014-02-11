@@ -2,14 +2,46 @@ Name: <%= @contact.name %>
 
 Email: <%= @contact.email %>
 
+<% unless @contact.phone.blank? %>
 Phone: <%= @contact.phone %>
 
+<% end %>
+<% unless @contact.title.blank? %>
 Title: <%= @contact.title %>
 
+<% end %>
+<% unless @contact.company.blank? %>
 Company: <%= @contact.company %>
 
+<% end %>
+<% unless @contact.local.blank? %>
 U.S. Residence: <%= @contact.local %>
 
+<% end %>
+<% unless @contact.foreign.blank? %>
 Foreign Residence: <%= @contact.foreign %>
 
-Body: <%= @contact.body %>
+<% end %>
+<% unless @contact.body.blank? %>
+Comments: <%= @contact.body %>
+
+<% end %>
+
+<% if @contact.quote == "1" %>
+Reply with fee quote for US expatriate tax services
+<% end %>
+<% if @contact.individual == "1" %>
+Reply with fee quote for U.S. individual tax services
+<% end %>
+<% if @contact.corporate == "1" %>
+Reply with fee quote for U.S. corporate tax services
+<% end %>
+<% if @contact.gaapfee == "1" %>
+Reply with fee quote for US GAAP translation services
+<% end %>
+<% if @contact.gaap == "1" %>
+Have a consultant contact me regarding US GAAP translation services
+<% end %>
+<% if @contact.russian == "1" %>
+Reply with fee quote for Russian tax services
+<% end %>

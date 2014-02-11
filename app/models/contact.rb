@@ -4,9 +4,9 @@ class Contact
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :name, :body, :email, :title, :company, :local, :foreign, :phone
+  attr_accessor :name, :body, :email, :title, :company, :local, :foreign, :phone, :quote, :gaapfee, :gaap, :individual, :corporate, :russian
 
-  validates :name, :body, :presence => true
+  validates :name, :presence => true
   validates :name, :email, :title, :company, :local, :foreign, :phone, length: { maximum: 100 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: { with: VALID_EMAIL_REGEX }, allow_blank: true
