@@ -39,6 +39,7 @@ $shadowColor: #999;
 .clear  {clear: both;}
 .fixed  {position: fixed;}
 .bump-down {margin-top: 20px;}
+.bump-way-down {margin-top: 60px;}
 .italic {font-style: italic;}
 .left   {text-align: left;}
 .dark   {color: $textdark;}
@@ -121,7 +122,7 @@ header {
 }
 #body-content {
   font-family: arial,verdana,sans-serif;
-  p, ul {
+  p, ul, ol {
     font-size: .9em;
     text-align: left;
     color: $textdark;
