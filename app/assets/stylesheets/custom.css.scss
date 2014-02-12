@@ -150,13 +150,31 @@ header {
     background-size: contain;
     height: 250px;
     .exerpt {
+      height: 135px;
+      padding: 30px 60px 30px 50px;
+      overflow-y: hidden;
+      p {
+	font-style: oblique;
+	line-height: 1em;
+	color: black; 
+	font-family:"Times New Roman", Times, serif;
+	text-align: left;
+      }
+      h5 {
+	text-align: right;
+      }
+    }
+  }
+  #testify-page {
+    p {
       font-style: oblique;
       color: black; 
       font-family:"Times New Roman", Times, serif;
       text-align: left;
-      height: 110px;
-      padding: 30px 60px 30px 50px;
-      overflow-y: hidden;
+    }
+    h5 {
+      text-align: right;
+      margin-right: 50px;
     }
   }
   .head-shot {

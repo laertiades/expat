@@ -18,7 +18,7 @@ function startTestimonies() {
   $("div.exerpt").fadeOut('slow', testimony2);
 }
 function testimony2() {
-  $("div.exerpt h6").text(testimonies[counter]);
+  $("div.exerpt").html(testimonies[counter]);
   $("div.exerpt").fadeIn();
 }
 
