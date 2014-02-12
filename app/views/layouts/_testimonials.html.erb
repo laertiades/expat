@@ -1,0 +1,5 @@
+<div id="testify-page">
+<% @cms_site.snippets.for_category('testimony').each do |snip| %>
+  <%= snip.content.html_safe %>
+<% end %>
+</div>
