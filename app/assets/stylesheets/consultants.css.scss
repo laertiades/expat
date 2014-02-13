@@ -9,6 +9,9 @@
 }
 
 #consultant {
+  div {
+    text-align: left;
+  }
   margin-top: 60px;
   input[type=text] {
     border: 1px solid #bbb;
@@ -33,7 +36,7 @@
     width: 20%;
     overflow: wrap;
   }
-  .btn-primary {
+  .btn {
     margin-top: 40px;
   }
 }

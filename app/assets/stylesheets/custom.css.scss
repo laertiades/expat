@@ -8,6 +8,7 @@ $grayblue: #223355;
 $textlight: #888;
 $textdark: #777;
 $shadowColor: #999;
+$grayLight: #999;
 
 @mixin border-radius ($radius) {
   -webkit-border-radius: $radius;
@@ -65,30 +66,22 @@ $shadowColor: #999;
   height: 250px;
 } 
 header {
-  .navbar {
-    margin-left: 10px;
-    margin-right: 10px;
-    .nav {
-      margin: 0;
-    }
-  }
   nav {
+    text-align: left;
     ul.nav {
       li.dropdown:hover ul.dropdown-menu{
-	margin-top: 0;
-        display: block;    
+        display: block;   
       }
-      padding-top: 10px;
-      padding-bottom: 10px;
+      ul.dropdown-menu {
+	margin-top: 0;
+      }
       li.cameo {
 	display: inline-block;
-	float: none !important;
-	  padding: 0 8px;
 	a {
 	  color: rgb(119, 119, 119);
 	  &:hover {
 	    color: rgb(51, 51, 51);
-	    text-decoration: none;
+	    background-color: transparent;
 	  }
 	}
       }
@@ -99,7 +92,7 @@ header {
   }
   #gallery {
     position: relative;
-    height: 270px;
+    height: 330px;
   }
   .ban-pic {
     width: 100%;

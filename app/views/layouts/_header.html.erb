@@ -1,33 +1,27 @@
 <header>
   <div class="row">
-    <div class="span4 offset1">
+    <div class="col-lg-4 col-lg-offset-1">
       <%= image_tag "expatcpa_banner2.jpg", id: "ban-logo" %>
     </div>
-    <div id="gallery" class="span6"></div>
+    <div id="gallery" class="col-lg-6"></div>
   </div>
   <div class="clear"></div>
-  <div class="navbar">
-    <div class="navbar-inner">
-      <nav> 
-	<ul class="nav">
-	  <div>
-	    <% page = Cms::Site.first.pages.root %>
-	    <li class="cameo"><%= link_to page.label, page.full_path %></li>
-	    <% Cms::Site.first.pages.root.children.published.each do |page| %>
-	      <li id="fat-menu" class="dropdown cameo">
-		<%= link_to page.label, page.full_path, class: "dropdown-toggle", :data => {:toggle => "dropdown"} %>
-		<% if page.children.published.any? %>
-		  <ul class="dropdown-menu">
-		    <% page.children.published.each do |child| %>
-		      <li><%= link_to child.label, child.full_path %></li>
-		    <% end %>
-		  </ul>
-		<% end %>
-	      </li>
-	    <% end %>
-	  </div>
-	</ul>
-      </nav>
-    </div>
-  </div>
+  <nav class="navbar navbar-default" role="navigation"> 
+    <ul class="nav">
+      <% page = Cms::Site.first.pages.root %>
+      <li class="cameo"><%= link_to page.label, page.full_path %></li>
+      <% Cms::Site.first.pages.root.children.published.each do |page| %>
+	<li class="dropdown cameo">
+	  <%= link_to page.label, page.full_path, class: "dropdown-toggle", :data => {:toggle => "dropdown"} %>
+	  <% if page.children.published.any? %>
+	    <ul class="dropdown-menu">
+	      <% page.children.published.each do |child| %>
+		<li><%= link_to child.label, child.full_path %></li>
+	      <% end %>
+	    </ul>
+	  <% end %>
+	</li>
+      <% end %>
+    </ul>
+  </nav>
 </header>

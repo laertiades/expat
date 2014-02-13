@@ -4,7 +4,7 @@
 
 reload = ->
   filter = false
-  height = window.innerHeight - 270
+  height = window.innerHeight - 280
   oTable = $('.datatable').dataTable({
     "sScrollY": height,
     "aLengthMenu": [20, 50, 200, 1000],
