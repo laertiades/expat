@@ -1,50 +1,60 @@
-  <div id="loose-form" class="span6">
-    <%= form_for(@contact) do |f| %>
-      <%= render 'shared/error_messages' %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-
-      <%= f.label :company %>
-      <%= f.text_field :company %>
-
-      <%= f.label :local, "U.S. Residence City and State" %>
-      <%= f.text_field :local %>
-
-      <%= f.label :foreign, "Foreign Country of Residence" %>
-      <%= f.text_field :foreign %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :phone, "Phone (If you desire to be contacted by phone)" %>
-      <%= f.text_field :phone %>
-
-      <%= f.label :body, "Additional Comments" %>
-      <%= f.text_area :body %>
-      <div class="clear"></div>
-
-      <%= f.check_box(:quote) %>
-      <%= f.label(:quote, "Reply with fee quote for US expatriate tax services") %>
-      
-      <%= f.check_box(:individual) %>
-      <%= f.label(:individual, "Reply with fee quote for U.S. individual tax services") %>
-      
-      <%= f.check_box(:corporate) %>
-      <%= f.label(:corporate, "Reply with fee quote for U.S. corporate tax services") %>
-      
-      <%= f.check_box(:gaapfee) %>
-      <%= f.label(:gaapfee, "Reply with fee quote for US GAAP translation services") %>
-      
-      <%= f.check_box(:gaap) %>
-      <%= f.label(:gaap, "Have a consultant contact me regarding US GAAP translation services") %>
-      
-      <%= f.check_box(:russian) %>
-      <%= f.label(:russian, "Reply with fee quote for Russian tax services") %>
-      
-      <%= f.submit "Send Message", class: "btn btn-large btn-primary" %>
-    <% end %>
+<%= form_for @contact, html: {id: "loose-form", class: "left", role: "form"} do |f| %>
+  <%= render 'shared/error_messages' %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :company %>
+    <%= f.text_field :company, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :local, "U.S. Residence City and State" %>
+    <%= f.text_field :local, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :foreign, "Foreign Country of Residence" %>
+    <%= f.text_field :foreign, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone, "Phone (If you desire to be contacted by phone)" %>
+    <%= f.phone_field :phone, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :body, "Additional Comments" %>
+    <%= f.text_area :body, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.check_box(:quote) %>
+    <%= f.label(:quote, "Reply with fee quote for US expatriate tax services") %>
+  </div>
+  <div class="form-group">
+    <%= f.check_box(:individual) %>
+    <%= f.label(:individual, "Reply with fee quote for U.S. individual tax services") %>
+  </div>
+  <div class="form-group">
+    <%= f.check_box(:corporate) %>
+    <%= f.label(:corporate, "Reply with fee quote for U.S. corporate tax services") %>
+  </div>
+  <div class="form-group">
+    <%= f.check_box(:gaapfee) %>
+    <%= f.label(:gaapfee, "Reply with fee quote for US GAAP translation services") %>
+  </div>
+  <div class="form-group">
+    <%= f.check_box(:gaap) %>
+    <%= f.label(:gaap, "Have a consultant contact me regarding US GAAP translation services") %>
+  </div>
+  <div class="form-group">
+    <%= f.check_box(:russian) %>
+    <%= f.label(:russian, "Reply with fee quote for Russian tax services") %>
+  </div>
+  <%= f.submit "Send Message", class: "btn btn-large btn-primary" %>
+<% end %>
