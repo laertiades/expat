@@ -8,6 +8,7 @@ Expat::Application.routes.draw do
   resources :contacts, only: [:new, :create]
   comfy_route :cms_admin, :path => "/#{ENV['CMS_FOLDER']}"
   match '/contact-us', to: 'contacts#new', via: 'get'
+  match '/getting-started', to: 'contacts#new', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

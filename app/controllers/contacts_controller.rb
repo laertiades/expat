@@ -1,7 +1,11 @@
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
-    render :cms_page => '/contact-us'
+    if request.fullpath == "/contact-us"
+      render :cms_page => '/contact-us'
+    else
+      render :cms_page => '/getting-started'
+    end      
   end
 
   def create
@@ -12,10 +16,19 @@ class ContactsController < ApplicationController
         flash[:success] = "Your message was sent.  Thank you for your interest in ExpatCPA."
         redirect_to '/'
       else
-        render :cms_page => '/contact-us'
+	puts request.referrer
+	if request.referrer.index "/contact-us"
+          render :cms_page => '/contact-us'
+	else
+          render :cms_page => '/getting-started'
+	end
       end
     else
-      render :cms_page => '/contact-us'
+      if request.referrer.index "/contact-us"
+	render :cms_page => '/contact-us'
+      else
+	render :cms_page => '/getting-started'
+      end
     end
   end
 
