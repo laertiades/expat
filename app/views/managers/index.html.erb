@@ -2,7 +2,7 @@
 <h1>All Managers</h1>
 
 <div class="row">
-  <div class="col-lg-6 col-lg-offset-4">
+  <div class="col-md-6 col-md-offset-4">
     <ul class="consultants">
       <% @managers.each do |man| %>
 	<li><%= link_to man.name, edit_manager_path(man) %></li>
