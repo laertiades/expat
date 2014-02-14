@@ -7,7 +7,7 @@
       <%= render 'shared/manager_messages' %>
 
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :class => "form-control" %>
 
       <%= f.submit "Update #{@manager.name}", class: "btn btn-large btn-primary" %>
     <% end %>

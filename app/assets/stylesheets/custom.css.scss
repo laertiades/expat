@@ -164,7 +164,7 @@ header {
   }
   h3 {
     line-height: 1.7;
-    font-size: 1em;
+    font-size: 1.3em;
     color: $textdark; 
   }
   h6 {
@@ -178,6 +178,7 @@ header {
     .exerpt {
       overflow-y: hidden;
       p {
+	font-size: 1.1em;
 	font-style: oblique;
 	line-height: 1.1em;
 	color: black; 

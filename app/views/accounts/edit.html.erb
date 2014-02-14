@@ -3,8 +3,9 @@
 
 <div id="tight-form" class="row">
   <%= render 'shared/account_messages' %>
-    <%= form_for(@account) do |f| %>
+    <%= form_for(@account, html: {role: "form"} ) do |f| %>
       <%= render 'fields', f: f %>
+      <div class="clear"></div>
       <%= f.submit "Update #{@account.name}", class: "btn btn-large btn-primary" %>
     <% end %>
     <%= link_to "Delete #{@account.name}", @account, method: :delete, data: { confirm: "STOP!!  This action is irreversible!" }, class: "btn btn-danger" %>

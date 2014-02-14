@@ -8,9 +8,11 @@
       <th>consultant</th>
       <th>received</th>
       <th>assigned</th>
+      <th>began</th>
       <th>completed</th>
       <th>sent</th>
       <th>filed</th>
+      <th>mode</th>
       <th>basic</th>
       <th>state</th>
       <th>1116</th>
@@ -25,10 +27,10 @@
       <th>5471</th>
       <th>misc</th>
       <th>fee</th>
-      <th>Total Cost</th>
       <th>Deposit</th>
       <th>Payment</th>
       <th>Balance</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -41,7 +43,6 @@
   @accounts.order("lower(name) ASC").each do |acc|
   i = i + 1
   fees = fees + (acc.fee || 0)
-  costs = costs + (acc.cost || 0)
   deposits = deposits + (acc.deposit || 0)
   payments = payments + (acc.payment || 0)
   balance = (acc.fee || 0) - (acc.deposit || 0) - (acc.payment || 0)
@@ -53,9 +54,11 @@
     <td><%= acc.consultant.name unless acc.consultant.blank? %></td>
     <td><%= acc.received.strftime("%b %d") unless acc.received.blank? %></td>
     <td><%= acc.assigned.strftime("%b %d") unless acc.assigned.blank? %></td>
+    <td><%= acc.began.strftime("%b %d") unless acc.began.blank? %></td>
     <td><%= acc.completed.strftime("%b %d") unless acc.completed.blank? %></td>
     <td><%= acc.sent.strftime("%b %d") unless acc.sent.blank? %></td>
     <td><%= acc.filed.strftime("%b %d") unless acc.filed.blank? %></td>
+    <td><%= acc.mode unless acc.mode.blank? %></td>
     <td class="checks"><%= "299" if acc.basic %></td>
     <td class="checks"><%= "175" if acc.state %></td>
     <td class="checks"><%= "125" if acc.f1116 %></td>
@@ -70,20 +73,25 @@
     <td class="checks"><%= "600" if acc.f5471 %></td>
     <td><%= number_to_currency(acc.misc) %></td>
     <td><%= number_to_currency(acc.fee) %></td>
-    <td><%= number_to_currency(acc.cost) %></td>
     <td>-<%= number_to_currency(acc.deposit) %></td>
     <td>-<%= number_to_currency(acc.payment) %></td>
     <td><%= number_to_currency(balance) %></td>
+    <% if acc.manager.name == "Joshua" %>
+      <td></td>
+    <% else %>
+      <% costs = costs + (acc.cost || 0) %>
+      <td><%= number_to_currency(acc.cost) %></td>
+    <% end %>
   </tr>
   <% end %>
   </tbody>
   <tfoot>
-    <tr><%= ("<td></td>" * 22).html_safe %>
+    <tr><%= ("<td></td>" * 24).html_safe %>
       <td><%= number_to_currency(fees) %></td>
-      <td><%= number_to_currency(costs) %></td>
       <td>-<%= number_to_currency(deposits) %></td>
       <td>-<%= number_to_currency(payments) %></td>
       <td><%= number_to_currency(balances) %></td>
+      <td><%= number_to_currency(costs) %></td>
     </tr>
   </tfoot>
 </table>

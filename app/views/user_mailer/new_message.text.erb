@@ -6,20 +6,16 @@ Email: <%= @contact.email %>
 Phone: <%= @contact.phone %>
 
 <% end %>
-<% unless @contact.title.blank? %>
-Title: <%= @contact.title %>
-
-<% end %>
 <% unless @contact.company.blank? %>
 Company: <%= @contact.company %>
 
 <% end %>
-<% unless @contact.local.blank? %>
-U.S. Residence: <%= @contact.local %>
-
-<% end %>
 <% unless @contact.foreign.blank? %>
 Foreign Residence: <%= @contact.foreign %>
+
+<% end %>
+<% unless @contact.years.blank? %>
+Years: <%= @contact.years %>
 
 <% end %>
 <% unless @contact.body.blank? %>

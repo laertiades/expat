@@ -5,28 +5,30 @@
     <%= f.text_field :name, :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, :class => "form-control" %>
+    <%= f.label :email %>
+    <%= f.email_field :email, :class => "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :company %>
     <%= f.text_field :company, :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :local, "U.S. Residence City and State" %>
-    <%= f.text_field :local, :class => "form-control" %>
-  </div>
-  <div class="form-group">
     <%= f.label :foreign, "Foreign Country of Residence" %>
     <%= f.text_field :foreign, :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, :class => "form-control" %>
-  </div>
-  <div class="form-group">
     <%= f.label :phone, "Phone (If you desire to be contacted by phone)" %>
     <%= f.phone_field :phone, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label(:years, "How many years previous are you filing for?") %>
+    <div class="clear"></div>
+    <%= f.radio_button(:years, "1") %>
+    <%= f.label(:years_1, "1") %>
+    <%= f.radio_button(:years, "2") %>
+    <%= f.label(:years_2, "2") %>
+    <%= f.radio_button(:years, "3 or more") %>
+    <%= f.label(:years_3, "3 or more") %>
   </div>
   <div class="form-group">
     <%= f.label :body, "Additional Comments" %>
