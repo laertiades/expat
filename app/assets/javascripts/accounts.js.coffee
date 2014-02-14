@@ -30,8 +30,8 @@ reload = ->
     "bSort": false })
   billableFilter = ( oSettings, aData, iDataIndex ) ->
     if !filter then true
-    else if aData[6] == "" then false
-    else if aData[26] == "$0.00" then false
+    else if aData[7] == "" then false
+    else if aData[27] == "$0.00" then false
     else true
   $.fn.dataTableExt.afnFiltering.push billableFilter
   $('<button id="filter" class="btn btn-primary">Billable Accounts</button>').appendTo 'div.dataTables_filter'
