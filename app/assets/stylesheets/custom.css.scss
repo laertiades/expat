@@ -1,7 +1,55 @@
 @import "bootstrap";
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   header {
+    #ban-logo {
+      margin-top: 5px;
+    }
+    nav.navbar {
+      min-height: 40px;
+      ul.nav {
+	li.cameo {
+	  a {
+	    padding-right: 0;
+	    font-size: .8em;
+	  }
+	}
+      }
+    }
+  }
+  #body-content {
+    h1 {
+      line-height: 1.3;
+    }
+    h3 {
+      line-height: 1.2em;
+    }
+    p {
+      line-height: 1.1em;
+    }
+    .bubble {
+      height: 200px;
+      .exerpt {
+	height: 155px;
+	padding: 20px 30px 0 25px;
+	p {
+	  line-height: 1em;
+	}
+      }
+    }
+    iframe {
+      width: 100%;
+    }
+    .col-sm-4 .w100 img {
+      width: 100%;
+    }
+  }
+}
+@media (min-width: 768px) {
+  header {
+    #ban-logo {
+      margin-top: 90px;
+    }
     nav.navbar {
       min-height: 40px;
       ul.nav {
@@ -49,7 +97,7 @@
     }
   }
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   header {
     #gallery {
       height: 280px;
@@ -183,7 +231,6 @@ header {
     }
   }
   #ban-logo {
-    margin-top: 90px;
     width: 100%;
   }
   #gallery {
@@ -296,10 +343,6 @@ footer {
     &:hover {
       color: $grayLight;
     }
-  }
-  p {
-    line-height: .5;
-    text-align: center;
   }
 }
 /* miscellaneous */
