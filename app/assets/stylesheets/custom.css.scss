@@ -32,15 +32,24 @@
       line-height: 1.1em;
     }
     .bubble {
-      height: 260px;
+      height: 200px;
       .exerpt {
-	height: 188px;
-	padding: 25px 40px 0 30px;
+	height: 155px;
+	padding: 20px 30px 0 25px;
+	p {
+	  line-height: 1em;
+	}
       }
+    }
+    iframe {
+      width: 100%;
+    }
+    .col-sm-4 .w100 img {
+      width: 100%;
     }
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 991px) {
   header {
     #gallery {
       height: 280px;
@@ -62,6 +71,9 @@
       .exerpt {
 	height: 188px;
 	padding: 25px 40px 0 30px;
+	p {
+	  line-height: 1.1em;
+	}
       }
     }
   }
@@ -231,7 +243,6 @@ header {
       p {
 	font-size: 1.1em;
 	font-style: oblique;
-	line-height: 1.1em;
 	color: black; 
 	font-family:"Times New Roman", Times, serif;
 	text-align: left;
