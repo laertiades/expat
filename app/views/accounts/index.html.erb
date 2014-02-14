@@ -12,7 +12,6 @@
       <th>completed</th>
       <th>sent</th>
       <th>filed</th>
-      <th>mode</th>
       <th>basic</th>
       <th>state</th>
       <th>1116</th>
@@ -58,7 +57,6 @@
     <td><%= acc.completed.strftime("%b %d") unless acc.completed.blank? %></td>
     <td><%= acc.sent.strftime("%b %d") unless acc.sent.blank? %></td>
     <td><%= acc.filed.strftime("%b %d") unless acc.filed.blank? %></td>
-    <td><%= acc.mode unless acc.mode.blank? %></td>
     <td class="checks"><%= "299" if acc.basic %></td>
     <td class="checks"><%= "175" if acc.state %></td>
     <td class="checks"><%= "125" if acc.f1116 %></td>
@@ -86,7 +84,7 @@
   <% end %>
   </tbody>
   <tfoot>
-    <tr><%= ("<td></td>" * 24).html_safe %>
+    <tr><%= ("<td></td>" * 23).html_safe %>
       <td><%= number_to_currency(fees) %></td>
       <td>-<%= number_to_currency(deposits) %></td>
       <td>-<%= number_to_currency(payments) %></td>

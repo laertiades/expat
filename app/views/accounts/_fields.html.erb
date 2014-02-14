@@ -37,10 +37,6 @@
 
     <%= f.label :status, "Account Status" %>
     <%= f.select(:status, options_for_select([['Normal', 1], ['Awaiting Data',2], ['Client Not Responding',3], ['Client Quit',4]], @account.status)) %>
-    <div class="clear"></div>
-    
-    <%= f.label :mode, "Method of Account submittal" %>
-    <%= f.select(:mode, options_for_select([['Notebook Portal', "np"], ['Notebook Cloud', "nc"], ['Questionnaire Portal', "qp"], ['Questionnaire Cloud', "qc"]], @account.mode)) %>
 </div>
 <div class="col-md-6">
     <%= f.check_box(:basic) %>
