@@ -10,6 +10,8 @@ Expat::Application.routes.draw do
   match '/contact-us', to: 'contacts#new', via: 'get'
   match '/getting-started', to: 'contacts#new', via: 'get'
 
+  match "/#{ENV['GOOGLE']}.html", to: proc { |env| [200, {},
+    ["google-site-verification: #{ENV['GOOGLE']}.html"]] }, via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

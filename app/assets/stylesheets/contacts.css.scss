@@ -6,4 +6,7 @@
   input[type=radio] {
     margin-left: 10px;
   }
+  input[type=checkbox]+label {
+    width: 95%;
+  }
 }
