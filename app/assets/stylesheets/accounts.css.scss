@@ -17,16 +17,23 @@
     width: 40%;
     height: 30px;
   }
+  input[type=checkbox] {
+    margin-right: 10px;
+  }
   label {
     margin-top: 1.3%;
     line-height: .9em;
     margin-right: 4%;
+    width: 50%;
+    overflow: wrap;
     text-align: right;
     float: left;
   }
-  label {
-    width: 50%;
-    overflow: wrap;
+  input[type=checkbox]+label {
+    margin-top: 6px;
+    float: right;
+    text-align: left;
+    width: 45%;
   }
   .btn {
     margin-top: 40px;

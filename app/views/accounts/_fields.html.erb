@@ -37,8 +37,9 @@
 
     <%= f.label :status, "Account Status" %>
     <%= f.select(:status, options_for_select([['Normal', 1], ['Awaiting Data',2], ['Client Not Responding',3], ['Client Quit',4]], @account.status)) %>
+    <div class="clear"></div>
 </div>
-<div class="col-md-6">
+<div class="col-md-6" style="text-align: right;">
     <%= f.check_box(:basic) %>
     <%= f.label(:basic, "1040/2555 Basic") %>
     <div class="clear"></div>
@@ -86,6 +87,7 @@
     <%= f.check_box(:f5471) %>
     <%= f.label(:f5471, "Form 5471") %>
     <div class="clear"></div>
+    <div class="bump-down"></div>
 
     <%= f.label :name, "Additional Charges" %>
     <%= f.text_field :misc, :class => "form-control" %>
