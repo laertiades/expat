@@ -1,6 +1,6 @@
 class ErrorsController < ApplicationController
   def not_found
-      format.all { render template: 'errors/not_found', layout: 'layouts/application', status: 404 }
+    render template: 'errors/not_found', layout: 'layouts/application', status: 404
   end
 
   def unacceptable
