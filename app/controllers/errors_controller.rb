@@ -1,10 +1,10 @@
 class ErrorsController < ApplicationController
   def not_found
-      render :status => 404, :layout => "error_frame"
+      render :status => 404, :layout => false
   end
 
   def unacceptable
-      render :status => 422, :layout => "error_frame"
+      render :status => 422, :layout => false
   end
 
   def internal_error
