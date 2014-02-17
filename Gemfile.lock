@@ -1,9 +1,8 @@
 GIT
   remote: git://github.com/laertiades/comfortable-mexican-sofa.git
-  revision: d4a18c1c877145e046243421eaf6bad999b56187
-  branch: touches
+  revision: 7525ccc175847812e9778a0ebf08acb560d5b12f
   specs:
-    comfortable_mexican_sofa (1.11.100)
+    comfortable_mexican_sofa (1.11.101)
       active_link_to (>= 1.0.0)
       codemirror-rails (>= 3.0.0)
       coffee-rails (>= 3.1.0)
@@ -134,7 +133,7 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kramdown (1.3.1)
+    kramdown (1.3.2)
     libnotify (0.8.0)
       ffi (>= 1.0.11)
     listen (2.5.0)

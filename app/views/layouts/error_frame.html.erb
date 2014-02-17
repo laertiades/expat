@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <%= render 'layouts/standard_head' %>
+  <head>
+    <%= stylesheet_link_tag "application", media: "all",
+					    "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+  </head>
   <body class="center">
     <div id="whole-background" class="w100 pa">
       <div class="w100" id="black-band"></div>
@@ -10,9 +16,6 @@
     <div class="pr">
       <div id="container-wrapper">
       <div class="container">
-	<% flash.each do |key, value| %>
-	  <div class="alert alert-<%= key %>"><%= value %></div>
-	<% end %>
 	<div class="clear"></div>
 	<header>
 	  <div class="row">
