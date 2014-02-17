@@ -1,14 +1,15 @@
 Expat::Application.routes.draw do
   comfy_route :cms_admin, :path => "/#{ENV['CMS_FOLDER']}"
-  if Rails.env.development?
-    match 'errors/not_found',     to: 'errors#not_found',            via: 'get'
-    match 'errors/unacceptable',  to: 'errors#unacceptable',         via: 'get'
-    match 'errors/internal_error',  to: 'errors#internal_error',         via: 'get'
-  elsif Rails.env.production?
-    get "404", :to => "errors#not_found"
-    get "422", :to => "errors#unacceptable"
-    get "500", :to => "errors#internal_error"
-  end
+#  if Rails.env.development?
+#    match 'errors/not_found',     to: 'errors#not_found',            via: 'get'
+#    match 'errors/unacceptable',  to: 'errors#unacceptable',         via: 'get'
+#    match 'errors/internal_error',  to: 'errors#internal_error',         via: 'get'
+#  elsif Rails.env.production?
+#    get "404", :to => "errors#not_found"
+#    get "422", :to => "errors#unacceptable"
+#    get "500", :to => "errors#internal_error"
+#  end
+
   # get "consultants/new"
   # get "managers/new"
   # get "accounts/new"
