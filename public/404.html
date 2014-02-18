@@ -1,58 +1,120 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-  }
-
-  div.dialog {
-    width: 25em;
-    margin: 4em auto 0 auto;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 4em 0 4em;
-  }
-
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  body > p {
-    width: 33em;
-    margin: 0 auto 1em;
-    padding: 1em 0;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow:0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
-
-<body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
-  </div>
-  <p>If you are the application owner check the logs for more information.</p>
-</body>
+  <head>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+      body {
+	background: -webkit-linear-gradient(black, black 100px, white 101px, white 102px, #CCC 103px, white 350px);
+	background: -o-linear-gradient(black, black 100px, white 101px, white 102px, #CCC 103px, white 350px);
+	background: -moz-linear-gradient(black, black 100px, white 101px, white 102px, #CCC 103px, white 350px);
+	background: linear-gradient(black, black 100px, white 101px, white 102px, #CCC 103px, white 350px);
+	background-repeat: no-repeat;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        color: #777;
+      }
+      .wrapper {
+        margin-top: 50px;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: rgba(255,255,255,.4);
+        width: 940px;
+        border: thin solid white;
+      }
+      .container {
+        width: 920px;
+        margin: 10px;
+        background-color: white;
+	box-shadow: 0 0 3px 0 #222;
+	-moz-box-shadow: 0 0 3px 0 #222;
+	-webkit-box-shadow: 0 0 3px 0 #222;
+	padding-bottom: 20px;
+      }
+      #ban-logo {
+        margin-top: 60px;
+        margin-left: 40px;
+      }
+      #place-holder {
+        margin-top: 20px;
+        margin-left: 40px;
+	box-shadow: 0 0 3px 0 #222;
+	-moz-box-shadow: 0 0 3px 0 #222;
+	-webkit-box-shadow: 0 0 3px 0 #222;
+      }
+      nav {
+        width: 900px;
+        background-color: #F8F8F8;
+        margin-left: 10px;
+        margin-top: 20px;
+        border: thin solid #DDD;
+	-webkit-border-radius: 5px;
+	  -moz-border-radius: 5px;
+		border-radius: 5px;
+      }
+      nav li {
+        display: inline-block;
+        margin-left: 20px;
+      }
+      nav li a {
+        text-decoration: none;
+        color: #777;
+      }
+      #body-content {
+        padding-right: 60px;
+        padding-left: 60px;
+      }
+      h1 {
+        font-size: 1.6em;
+        text-align: center;
+      }
+      h6 {
+        text-align: center;
+      }
+      footer {
+        margin-top: 40px;
+        border-top: 1px solid #EAEAEA;
+      }
+      footer p {
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.42857;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+	<header>
+	  <img id="ban-logo" src="https://s3.amazonaws.com/expatcpa/banner/expatcpa_banner2.jpg" />
+	  <img id="place-holder" src="https://s3.amazonaws.com/expatcpa/banner/expat5.jpg" />
+	  <div class="clear"></div>
+	  <nav> 
+	    <ul class="nav">
+	      <li><a href="/">home</a></li>
+	      <li>
+		<a href="/contact-us">contact us</a>
+	      </li>
+	    </ul>
+	  </nav>
+	</header>
+	<div id="body-content">
+	  <h1>404 - Page Not Found Error</h1>
+	  <h6>NO COMPUTERS WERE HARMED DURING THE MAKING OF THIS ERROR</h6>
+	  <p>What has happened is that your browser has requested a page from our server but our server is unable to locate that page in its routing table.  This is not cause for alarm.  Below are some common causes for 404 errors.</p>
+	  <ul>
+	    <li>User typed URL directly into address bar with a typo</li>
+	    <li>User bookmarked a page which is no longer available</li>
+	    <li>User followed a link from an outdated external source</li>
+	    <li>Server is currently undergoing maintenance</li>
+	  </ul>
+	  <p>We apologize for any inconvenience.  We have included our website menu bar at the top of this error page.  We sincerely hope that you are able to find the information that you are seeking.  Please feel free to contact our staff if you desire any assistance.  If you simply wish to return whence you came, please click on your browser's back arrow.  We thank you for attempting to access one of our pages and we hope that you visit us again in the future with more success.</p>
+	</div>
+	<footer>
+	  <p>ExpatCPA</p> 
+	  <p>info@expatcpa.com - (714) 939-7670 - One City Boulevard West, Suite 870, Orange, CA 92868</p>
+	</footer>
+      </div>
+    </div>
+  </body>
 </html>
