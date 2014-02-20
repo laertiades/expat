@@ -17,6 +17,9 @@
 	  <%= link_to page.label, page.full_path, class: "dropdown-toggle", :data => {:toggle => "dropdown"} %>
 	  <% if page.children.published.any? %>
 	    <ul class="dropdown-menu">
+	      <% if page.full_path == "/about" %>
+		<li><%= link_to page.label, page.full_path %></li>
+	      <% end %>
 	      <% page.children.published.each do |child| %>
 		<li><%= link_to child.label, child.full_path %></li>
 	      <% end %>
