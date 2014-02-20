@@ -21,9 +21,6 @@
     p {
       line-height: 1.1em;
     }
-    iframe {
-      width: 100%;
-    }
     .col-sm-4 .w100 img {
       width: 100%;
     }
@@ -72,7 +69,7 @@
     h3 {
       line-height: 1.7;
     }
-    .bubble {
+   .bubble {
       height: 260px;
       .exerpt {
 	height: 188px;
@@ -288,6 +285,18 @@ header {
       float: left;
       width: 50%;
       margin-right: 4%;
+    }
+  }
+  #frame-skin {
+    position:relative;
+    padding-top: 56%;
+    width: 100%;
+    iframe {
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
     }
   }
 }
