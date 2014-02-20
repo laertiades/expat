@@ -1,0 +1,5 @@
+<% @cms_site.files.images.for_category('smworker').sort_by(&:label).each do |fl| %>
+  <%= image_tag fl.file.url, class: "head-shot" %>
+  <%= Cms::File.for_category('lgworker').find_by_label(fl.label).description.html_safe %>
+  <div class="clear"></div>
+<% end %>

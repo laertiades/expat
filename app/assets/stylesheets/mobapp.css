@@ -1,7 +1,4 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
@@ -9,11 +6,5 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require custom
- *= require accounts
- *= require consultants
- *= require contacts
- *= require dataTables/jquery.dataTables.bootstrap3
- *= require dataTables/extras/TableTools
- *= require dataTables/extras/TableTools_JUI
+ *= require mobcust
  */
