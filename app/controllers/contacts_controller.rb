@@ -31,6 +31,10 @@ class ContactsController < ApplicationController
       end
     end
   end
+  
+  def getform
+    redirect_to 'https://s3.amazonaws.com/expatcpa/questionnaires/2013.xlsx'
+  end
 
   private
 
