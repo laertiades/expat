@@ -32,6 +32,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 group :production do
   gem 'rails_12factor', '0.0.2'
+  gem 'heroku_rails_deflate'
 end
 
 group :development, :test do

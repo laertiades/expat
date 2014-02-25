@@ -20,14 +20,15 @@ Expat::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
+  config.assets.compress = true
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   config.assets.precompile += %w(mobapp.css)
   # Generate digests for assets URLs.
@@ -79,7 +80,9 @@ Expat::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.site = 'safe-anchorage-1218.herokuapp.com'
+  config.static_cache_control = "public, max-age=2592000"
+
+  config.site = 'www.expatcpa.com'
 
   config.action_mailer.smtp_settings = {
     :address              => "smtp.sendgrid.net",
