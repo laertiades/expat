@@ -11,5 +11,9 @@ imageLinks = ( element ) ->
       $(this).stop()
       $(this).fadeTo "fast", 1
   )
+  
+reload = -> imageLinks(".button-fade")
 
-$ -> imageLinks(".button-fade")
+$ -> reload()
+
+$(document).on('page:load', reload)
