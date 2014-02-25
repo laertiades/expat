@@ -81,6 +81,7 @@ Expat::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.static_cache_control = "public, max-age=2592000"
+  config.action_controller.asset_host = 'd3qubnvmt6127p.cloudfront.net'
 
   config.site = 'www.expatcpa.com'
 
