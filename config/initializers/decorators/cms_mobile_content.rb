@@ -33,6 +33,10 @@ Cms::ContentController.class_eval do
     end
     
     def render_html(status = 200)
+      logger.info({:user_agent => request.user_agent, :remote_ip => request.remote_ip}.inspect)
+      logger.info(params.inspect)
+      logger.info request.env.to_s[0..2000]
+
       if @cms_layout = @cms_page.layout
 	app_layout = (@cms_layout.app_layout.blank? || request.xhr?) ? false : @cms_layout.app_layout
 	if ComfortableMexicanSofa.config.enable_conditional_get_support
