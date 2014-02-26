@@ -105,6 +105,7 @@ Expat::Application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     },
     :url => ':s3_alias_url',
+    :path => '/:class/:attachment/:id_partition/:style/:filename',
     :s3_host_alias => 'd21c7j241p6103.cloudfront.net',
     :convert_options => { :all => '-strip' },
     :s3_headers => { 
