@@ -24,6 +24,10 @@ gem "mobile-fu", "~> 1.3.1"
 gem 'aws-sdk'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 # gem 'will_paginate'
+gem 'rack-cache'
+gem 'dalli'
+gem 'kgio'
+gem "memcachier"
 gem 'unicorn'
 gem "rack-timeout"
 

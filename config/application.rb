@@ -27,5 +27,6 @@ module Expat
     # config.exceptions_app = self.routes
     I18n.config.enforce_available_locales = true
     config.google_verification = ENV['GOOGLE']
+    config.cache_store = :dalli_store
   end
 end
