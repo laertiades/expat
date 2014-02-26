@@ -13,10 +13,13 @@ class ContactsController < ApplicationController
     
     if @contact.valid?
       if UserMailer.new_message(@contact).deliver
-        flash[:success] = "Your message was sent.  Thank you for your interest in ExpatCPA."
-        redirect_to '/'
+        flash.now[:success] = "Your message was sent.  Thank you for your interest in ExpatCPA."
+	if request.referrer.index "/contact-us"
+          render :cms_page => '/contact-us'
+	else
+          render :cms_page => '/getting-started'
+	end
       else
-	puts request.referrer
 	if request.referrer.index "/contact-us"
           render :cms_page => '/contact-us'
 	else
