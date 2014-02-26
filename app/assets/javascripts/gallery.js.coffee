@@ -1,4 +1,4 @@
-images = ["https://s3.amazonaws.com/expatcpa/banner/expat1.jpg", "https://s3.amazonaws.com/expatcpa/banner/expat2.jpg", "https://s3.amazonaws.com/expatcpa/banner/expat3.jpg", "https://s3.amazonaws.com/expatcpa/banner/expat4.jpg", "https://s3.amazonaws.com/expatcpa/banner/expat5.jpg"]
+images = ["http://d21c7j241p6103.cloudfront.net/banner/expat1.jpg", "http://d21c7j241p6103.cloudfront.net/banner/expat2.jpg", "http://d21c7j241p6103.cloudfront.net/banner/expat3.jpg", "http://d21c7j241p6103.cloudfront.net/banner/expat4.jpg", "http://d21c7j241p6103.cloudfront.net/banner/expat5.jpg"]
 preloadedImgs = []
 counter = 0
 
