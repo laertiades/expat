@@ -26,10 +26,15 @@
     }
   }
   header {
+    #ban-logo {
+      width: 100%;
+      margin-top: 40%;
+    }
     #gallery {
       .ban-pic {
 	width: 97%;
 	top: 16px;
+        left: 0;
       }
       #place-holder {
         width: 97%;
@@ -51,14 +56,20 @@
 }
 @media (min-width: $screen-md-min) {
   header {
+    #ban-logo {
+      width: 90%;
+      margin-top: 120px;
+    }
     #gallery {
       .ban-pic {
-	width: 100%;
+	width: 90%;
 	top: 20px;
+	left: 20px;
       }
       #place-holder {
-        width: 100%;
+        width: 90%;
 	margin-top: 20px;
+	margin-left: 20px;
       }
     }
   }
@@ -181,17 +192,12 @@ header {
       }
     }
   }
-  #ban-logo {
-    width: 100%;
-    margin-top: 40%;
-  }
   #gallery {
     text-align: left;
     position: relative;
     padding: 0;
     .ban-pic {
       position: absolute;
-      left: 0;
     }
     #place-holder {
       @include shadow(0);
