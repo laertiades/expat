@@ -96,6 +96,9 @@ Expat::Application.configure do
 
   config.site = 'www.expatcpa.com'
 
+  config.middleware.delete "Rack::MobileDetect"
+  config.middleware.insert_before Rack::Cache, Rack::MobileDetect 
+  
   config.action_mailer.smtp_settings = {
     :address              => "smtp.sendgrid.net",
     :port                 => '587',
