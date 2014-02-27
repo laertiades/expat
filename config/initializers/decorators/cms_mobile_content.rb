@@ -18,6 +18,9 @@ Cms::ContentController.class_eval do
     def render_mobile(status = 200)
       if @cms_layout = @cms_page.layout
 	app_layout = (@cms_layout.app_layout.blank? || request.xhr?) ? false : @cms_layout.app_layout
+	if ComfortableMexicanSofa.config.enable_conditional_get_support
+	  expires_in 2.days, :public => false
+	end
 	if !ComfortableMexicanSofa.config.enable_conditional_get_support || stale?(:etag => flash.to_hash, :last_modified => @cms_page.site.updated_at)
 	  text = render_to_string :inline => @cms_page.content
 	  text = Nokogiri::HTML(text)
@@ -36,7 +39,7 @@ Cms::ContentController.class_eval do
       if @cms_layout = @cms_page.layout
 	app_layout = (@cms_layout.app_layout.blank? || request.xhr?) ? false : @cms_layout.app_layout
 	if ComfortableMexicanSofa.config.enable_conditional_get_support
-	  expires_in 2.days, :public => true, :'s-maxage' => '36000'
+	  expires_in 2.days, :public => false
 	  if stale?(:etag, :last_modified => @cms_page.site.updated_at)
 	    render :inline => @cms_page.content, :layout => app_layout, :status => status, :content_type => 'text/html'
 	  end
