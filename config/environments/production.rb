@@ -96,12 +96,13 @@ Expat::Application.configure do
     }
   }
   config.static_cache_control = "public, max-age=2592000"
+  config.action_controller.asset_host = 'd3qubnvmt6127p.cloudfront.net'
 
   config.site = 'www.expatcpa.com'
 
-  config.action_dispatch.rack_cache[:cache_key] = Proc.new { |request|
-      ["", ':', Rack::Cache::Key.new(request).generate].join
-  }
+#  config.action_dispatch.rack_cache[:cache_key] = Proc.new { |request|
+#      ["", ':', Rack::Cache::Key.new(request).generate].join
+#  }
   config.middleware.delete "Rack::MobileDetect"
   config.middleware.insert_before Rack::Cache, Rack::MobileDetect 
   
