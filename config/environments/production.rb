@@ -91,7 +91,7 @@ Expat::Application.configure do
     :metastore    => client,
     :entitystore  => client,
     :verbose      => true,
-    :cache_key    => { |request|
+    :cache_key    => lambda { |request|
       Rack::Cache::Key.call(request) + ":X_MOBILE_DEVICE"
     }
   }
