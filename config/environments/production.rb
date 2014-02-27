@@ -89,14 +89,18 @@ Expat::Application.configure do
     :value_max_bytes => 10485760)
   config.action_dispatch.rack_cache = {
     :metastore    => client,
-    :entitystore  => client
+    :entitystore  => client,
+    :verbose      => true,
+    :cache_key    => { |request|
+      Rack::Cache::Key.call(request) + ":X_MOBILE_DEVICE"
+    }
   }
   config.static_cache_control = "public, max-age=2592000"
 
   config.site = 'www.expatcpa.com'
 
   config.action_dispatch.rack_cache[:cache_key] = Proc.new { |request|
-      ["X_MOBILE_DEVICE", ':', Rack::Cache::Key.new(request).generate].join
+      ["", ':', Rack::Cache::Key.new(request).generate].join
   }
   config.middleware.delete "Rack::MobileDetect"
   config.middleware.insert_before Rack::Cache, Rack::MobileDetect 
