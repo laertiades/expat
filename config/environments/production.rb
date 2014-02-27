@@ -94,6 +94,9 @@ Expat::Application.configure do
   config.static_cache_control = "public, max-age=2592000"
   config.action_controller.asset_host = 'd3qubnvmt6127p.cloudfront.net'
 
+  config.middleware.delete "Rack::MobileDetect"
+  config.middleware.insert_before Rack::Cache, Rack::MobileDetect 
+  
   config.site = 'www.expatcpa.com'
 
   config.action_mailer.smtp_settings = {

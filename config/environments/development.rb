@@ -27,6 +27,8 @@ Expat::Application.configure do
   # number of complex assets.
   config.assets.debug = true
   config.site = 'expat'
+  config.middleware.delete "Rack::MobileDetect"
+  config.middleware.insert_before Rack::Sendfile, Rack::MobileDetect 
 
   config.action_mailer.smtp_settings = {
     :address              => ENV['LOCAL_ADDRESS'],
