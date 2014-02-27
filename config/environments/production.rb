@@ -97,7 +97,7 @@ Expat::Application.configure do
   config.site = 'www.expatcpa.com'
 
   config.action_dispatch.rack_cache[:cache_key] = Proc.new { |request|
-      [X_MOBILE_DEVICE, ':', Rack::Cache::Key.new(request).generate].join
+      ["X_MOBILE_DEVICE", ':', Rack::Cache::Key.new(request).generate].join
   }
   config.middleware.delete "Rack::MobileDetect"
   config.middleware.insert_before Rack::Cache, Rack::MobileDetect 
