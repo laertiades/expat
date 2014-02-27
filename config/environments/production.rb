@@ -92,7 +92,6 @@ Expat::Application.configure do
     :entitystore  => client
   }
   config.static_cache_control = "public, max-age=2592000"
-  config.action_controller.asset_host = 'd3qubnvmt6127p.cloudfront.net'
 
   config.site = 'www.expatcpa.com'
 
