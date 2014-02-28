@@ -83,6 +83,14 @@ footer {
 #loose-form {
   input[type=text], input[type=email],textarea {
     width: 100%;
+    font-size: 1em;
+  }
+  input[type=checkbox], input[type=radio] {
+    width: 2em;
+    height: 2em;
+  }
+  input[type=submit] {
+    font-size: 1.2em;
   }
   label {
   }

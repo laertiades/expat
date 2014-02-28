@@ -90,8 +90,8 @@ Expat::Application.configure do
   config.action_dispatch.rack_cache = {
     :metastore    => client,
     :entitystore  => client,
-    :allow_reload     => true,
-    :allow_revalidate => true,
+#    :allow_reload     => true,
+#    :allow_revalidate => true,
     :cache_key    => lambda { |request|
       Rack::Cache::Key.call(request) + ":X_MOBILE_DEVICE"
     }
