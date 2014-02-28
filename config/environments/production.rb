@@ -90,7 +90,8 @@ Expat::Application.configure do
   config.action_dispatch.rack_cache = {
     :metastore    => client,
     :entitystore  => client,
-    :verbose      => true,
+    :allow_reload     => true,
+    :allow_revalidate => true,
     :cache_key    => lambda { |request|
       Rack::Cache::Key.call(request) + ":X_MOBILE_DEVICE"
     }
@@ -100,9 +101,6 @@ Expat::Application.configure do
 
   config.site = 'www.expatcpa.com'
 
-#  config.action_dispatch.rack_cache[:cache_key] = Proc.new { |request|
-#      ["", ':', Rack::Cache::Key.new(request).generate].join
-#  }
   config.middleware.delete "Rack::MobileDetect"
   config.middleware.insert_before Rack::Cache, Rack::MobileDetect 
   
