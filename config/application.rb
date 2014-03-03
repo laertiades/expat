@@ -28,5 +28,24 @@ module Expat
     I18n.config.enforce_available_locales = true
     config.google_verification = ENV['GOOGLE']
     config.cache_store = :dalli_store
+    
+    config.middleware.insert 0, 'Rack::Rewrite' do
+      r301      '/index.html',          '/'
+      r301      '/companyinfo.htm',     '/about'
+      r301      '/expat.htm',           '/expat-tax-advisor'
+      r301      '/taxservice.htm',      '/how-it-works'
+      r301      '/Offshore.htm',        '/expat-tax-advisor'
+      r301      '/accounting.htm',      '/expat-tax-advisor'
+      r301      '/financial.htm',       '/expat-tax-advisor'
+      r301      '/tax.htm',             '/expat-tax-advisor'
+      r301      '/feedback.htm',        '/contact-us'
+      r301      '/quotes.htm',          '/expat-investment-advice-and-planning/quotes'
+      r301      '/Links.htm',           '/'
+      r301      '/search.htm',          '/'
+      r301      '/testimonials.htm',    '/about/testimonials'
+      r301      '/CFC.htm',             '/expat-tax-advisor'
+      r301      '/LateFilings.htm',     '/expat-investment-advice-and-planning/old-forms'
+      r301      '/incorporation.htm',   '/expat-tax-advisor'
+    end
   end
 end

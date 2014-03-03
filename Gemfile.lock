@@ -181,6 +181,7 @@ GEM
       rack (>= 0.4)
     rack-mobile-detect (0.4.0)
       rack
+    rack-rewrite (1.5.0)
     rack-test (0.6.2)
       rack (>= 1.0)
     rack-timeout (0.0.4)
@@ -299,6 +300,7 @@ DEPENDENCIES
   nokogiri (~> 1.6.0)
   pg (~> 0.17.1)
   rack-cache
+  rack-rewrite
   rack-timeout
   rails (~> 4.0.2)
   rails_12factor (= 0.0.2)

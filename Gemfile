@@ -30,6 +30,7 @@ gem 'kgio'
 gem "memcachier"
 gem 'unicorn'
 gem "rack-timeout"
+gem 'rack-rewrite'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
