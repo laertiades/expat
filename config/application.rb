@@ -46,6 +46,8 @@ module Expat
       r301      '/CFC.htm',             '/expat-tax-advisor'
       r301      '/LateFilings.htm',     '/expat-investment-advice-and-planning/old-forms'
       r301      '/incorporation.htm',   '/expat-tax-advisor'
+      r301      '/russian_tax.htm',     '/'
+      r301      '/TIC.htm',             'http://www.cornerstonedst.com/'
     end
   end
 end
