@@ -19,8 +19,8 @@ Cms::ContentController.class_eval do
       if @cms_layout = @cms_page.layout
 	app_layout = (@cms_layout.app_layout.blank? || request.xhr?) ? false : @cms_layout.app_layout
 	if ComfortableMexicanSofa.config.enable_conditional_get_support
-	  expires_in 2.days, :public => true, :'s-maxage' => '36000'
-#	  expires_in 2.days, :public => false
+#	  expires_in 2.days, :public => true, :'s-maxage' => '36000'
+	  expires_in 2.days, :public => false
 	end
 	if !ComfortableMexicanSofa.config.enable_conditional_get_support || stale?(:etag => flash.to_hash, :last_modified => @cms_page.site.updated_at)
 	  text = render_to_string :inline => @cms_page.content
