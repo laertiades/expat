@@ -79,7 +79,8 @@ Expat::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
+  
+=begin
   client = Dalli::Client.new((ENV["MEMCACHIER_SERVERS"] || "").split(","),
     :username => ENV["MEMCACHIER_USERNAME"],
     :password => ENV["MEMCACHIER_PASSWORD"],
@@ -96,14 +97,14 @@ Expat::Application.configure do
       Rack::Cache::Key.call(request) + ":X_MOBILE_DEVICE"
     }
   }
+  config.middleware.delete "Rack::MobileDetect"
+  config.middleware.insert_before Rack::Cache, Rack::MobileDetect 
+=end
   config.static_cache_control = "public, max-age=2592000"
   config.action_controller.asset_host = 'd3qubnvmt6127p.cloudfront.net'
 
   config.site = 'www.expatcpa.com'
 
-  config.middleware.delete "Rack::MobileDetect"
-  config.middleware.insert_before Rack::Cache, Rack::MobileDetect 
-  
   config.action_mailer.smtp_settings = {
     :address              => "smtp.sendgrid.net",
     :port                 => '587',
