@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+#track-nav {
+  margin-top: 0;
+}
+
 #tight-form {
   input[type=text], input[type=date], select {
     border: 1px solid #bbb;
