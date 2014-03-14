@@ -18,6 +18,13 @@ GIT
       sass-rails (>= 3.1.0)
 
 GIT
+  remote: git://github.com/laertiades/rack-cache.git
+  revision: 0200d756498cfdcd02546b6d6647dd7f4c42fc8b
+  specs:
+    rack-cache (1.2)
+      rack (>= 0.4)
+
+GIT
   remote: git://github.com/rweng/jquery-datatables-rails.git
   revision: 788a7b24caf8fe58a5493aa3f6a065879a9f752a
   specs:
@@ -158,9 +165,10 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
-    mobile-fu (1.3.1)
-      rack-mobile-detect
-      rails
+    mobileesp_converted (0.2.3)
+    mobvious (0.3.2)
+      mobileesp_converted (~> 0.2.0)
+      rack (>= 1.1.0)
     multi_json (1.8.4)
     nio4r (1.0.0)
     nokogiri (1.6.1)
@@ -177,10 +185,6 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.4)
     rack (1.5.2)
-    rack-cache (1.2)
-      rack (>= 0.4)
-    rack-mobile-detect (0.4.0)
-      rack
     rack-rewrite (1.5.0)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -296,10 +300,10 @@ DEPENDENCIES
   libnotify (= 0.8.0)
   memcachier
   metamagic (~> 2.0.6)
-  mobile-fu (~> 1.3.1)
+  mobvious
   nokogiri (~> 1.6.0)
   pg (~> 0.17.1)
-  rack-cache
+  rack-cache!
   rack-rewrite
   rack-timeout
   rails (~> 4.0.2)

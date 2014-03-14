@@ -7,3 +7,4 @@
 Mime::Type.register_alias "text/html", :htm
 Mime::Type.register_alias "text/html", :xls
 Mime::Type.register_alias "text/html", :xlsx
+Mime::Type.register_alias "text/html", :mobile

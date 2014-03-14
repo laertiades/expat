@@ -20,11 +20,11 @@ gem 'comfortable_mexican_sofa', :git => 'git://github.com/laertiades/comfortable
 # gem 'comfortable_mexican_sofa', '~> 1.11.0', :git => 'git://github.com/laertiades/comfortable-mexican-sofa.git'
 # gem 'comfortable_mexican_sofa', '~> 1.11.0', :path => '/home/jesse/rails/comfortable-mexican-sofa'
 # gem 'simple_captcha', :git => 'git://github.com/pludoni/simple-captcha.git'
-gem "mobile-fu", "~> 1.3.1"
+gem 'mobvious'
 gem 'aws-sdk'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 # gem 'will_paginate'
-gem 'rack-cache'
+gem 'rack-cache', :git => 'git://github.com/laertiades/rack-cache.git'
 gem 'dalli'
 gem 'kgio'
 gem "memcachier"
