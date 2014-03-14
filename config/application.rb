@@ -29,7 +29,8 @@ module Expat
     config.google_verification = ENV['GOOGLE']
     config.cache_store = :dalli_store
     
-    config.middleware.insert_before(Rack::Cache, Mobvious::Manager)
+    config.middleware.use Mobvious::Manager    
+#    config.middleware.insert_before(Rack::Cache, Mobvious::Manager)
     
     config.middleware.insert 0, 'Rack::Rewrite' do
       r301      '/index.html',          '/'
