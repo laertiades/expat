@@ -80,7 +80,6 @@ Expat::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   
-=begin
   client = Dalli::Client.new((ENV["MEMCACHIER_SERVERS"] || "").split(","),
     :username => ENV["MEMCACHIER_USERNAME"],
     :password => ENV["MEMCACHIER_PASSWORD"],
@@ -90,13 +89,9 @@ Expat::Application.configure do
     :value_max_bytes => 10485760)
   config.action_dispatch.rack_cache = {
     :metastore    => client,
-    :entitystore  => client,
-#    :allow_reload     => true,
-#    :allow_revalidate => true,
-    :cache_key    => lambda { |request|
-      Rack::Cache::Key.call(request) + ":X_MOBILE_DEVICE"
-    }
+    :entitystore  => client
   }
+=begin
   config.middleware.delete "Rack::MobileDetect"
   config.middleware.insert_before Rack::Cache, Rack::MobileDetect 
 =end
