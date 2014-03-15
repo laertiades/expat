@@ -40,6 +40,7 @@ header {
 .link-box {
   text-align: center;
   a {
+    display: inline-block;
     border: solid thin $gray;
     @include border-radius(10px);
     background-color: $grayLight;
@@ -48,6 +49,7 @@ header {
     margin: 2px 1px;
     line-height: 1em;
     white-space: nowrap;
+    padding: 3px 5px;
   }
 }
 h1 {
