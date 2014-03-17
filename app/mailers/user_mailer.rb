@@ -1,6 +1,7 @@
 class UserMailer < ActionMailer::Base
   default from: "info@expatcpa.com"
-  default to:   "john@expatcpa.com"
+#  default to:   "john@expatcpa.com"
+  default to:   "jesse@goodfellowsites.com"
   if Rails.env.test?
      default to: "jesse@goodfellowsites.com"
   end

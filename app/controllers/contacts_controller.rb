@@ -1,11 +1,14 @@
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
-    if request.fullpath == "/contact-us"
-      render :cms_page => '/contact-us'
-    else
-      render :cms_page => '/getting-started'
-    end      
+    expires_in 2.days, :public => true, :'s-maxage' => '36000'
+    if stale?(:etag, :last_modified => Cms::Site.first.updated_at)
+      if request.fullpath == "/contact-us"
+	render :cms_page => '/contact-us'
+      else
+	render :cms_page => '/getting-started'
+      end
+    end
   end
 
   def create
@@ -14,11 +17,7 @@ class ContactsController < ApplicationController
     if @contact.valid?
       if UserMailer.new_message(@contact).deliver
         flash.now[:success] = "Your message was sent.  Thank you for your interest in ExpatCPA."
-	if request.referrer.index "/contact-us"
-          render :cms_page => '/contact-us'
-	else
-          render :cms_page => '/getting-started'
-	end
+        render :cms_page => '/'
       else
 	if request.referrer.index "/contact-us"
           render :cms_page => '/contact-us'
