@@ -54,7 +54,7 @@ module Expat
       r301      '/01QuestUS.xls',       'http://d21c7j241p6103.cloudfront.net/questionnaires/01QuestUS.xls'
       r301      '/RussQuestionnaire_2003.xls',       'http://d21c7j241p6103.cloudfront.net/questionnaires/RussQuestionnaire_2003.xls'
       r301      '/RussQuestionnaire_2005.xls',       'http://d21c7j241p6103.cloudfront.net/questionnaires/RussQuestionnaire_2005.xls'
-      r301      '/2008%20US%20Tax%20Questionnaire.xls',    'http://d21c7j241p6103.cloudfront.net/questionnaires/2008.xls'
+      r301      %r{/(\d+)%20US%20Tax%20Questionnaire.xls},    'http://d21c7j241p6103.cloudfront.net/questionnaires/$1.xls'
     end
   end
 end
