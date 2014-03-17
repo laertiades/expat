@@ -52,9 +52,12 @@ module Expat
       r301      '/TIC.htm',             'http://www.cornerstonedst.com/'
       r302      '/Corporation_HQ.jpg',  'http://www.expattaxpreparers.com/Corporation_HQ.jpg'
       r301      '/01QuestUS.xls',       'http://d21c7j241p6103.cloudfront.net/questionnaires/01QuestUS.xls'
-      r301      '/RussQuestionnaire_2003.xls',       'http://d21c7j241p6103.cloudfront.net/questionnaires/RussQuestionnaire_2003.xls'
-      r301      '/RussQuestionnaire_2005.xls',       'http://d21c7j241p6103.cloudfront.net/questionnaires/RussQuestionnaire_2005.xls'
-      r301      %r{/(\d+)%20US%20Tax%20Questionnaire.xls},    'http://d21c7j241p6103.cloudfront.net/questionnaires/$1.xls'
+      r301      '/RussQuestionnaire_2003.xls',                       'http://d21c7j241p6103.cloudfront.net/questionnaires/RussQuestionnaire_2003.xls'
+      r301      '/RussQuestionnaire_2005.xls',                       'http://d21c7j241p6103.cloudfront.net/questionnaires/RussQuestionnaire_2005.xls'
+      r301      %r{/(\d+)%20US%20Tax%20Questionnaire.xls},           'http://d21c7j241p6103.cloudfront.net/questionnaires/$1.xls'
+      r301      %r{/(\d+)%20US%20Tax%20Organizer.xls},               'http://d21c7j241p6103.cloudfront.net/questionnaires/$1.xls'
+      r301      %r{/(\d+)%20New%20US%20Tax%20Questionnaire%201.xls}, 'http://d21c7j241p6103.cloudfront.net/questionnaires/$1.xls'
+      r301      %r{/(\d+)%20US%20Tax%20Questionnaire.xlsx},          'http://d21c7j241p6103.cloudfront.net/questionnaires/$1.xlsx'
     end
   end
 end
