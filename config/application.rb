@@ -51,6 +51,9 @@ module Expat
       r301      '/russian_tax.htm',     '/'
       r301      '/TIC.htm',             'http://www.cornerstonedst.com/'
       r302      '/Corporation_HQ.jpg',  'http://www.expattaxpreparers.com/Corporation_HQ.jpg'
+      r301      '/RussQuestionnaire_2003.xls',       'http://d21c7j241p6103.cloudfront.net/questionnaires/RussQuestionnaire_2003.xls'
+      r301      '/RussQuestionnaire_2005.xls',       'http://d21c7j241p6103.cloudfront.net/questionnaires/RussQuestionnaire_2005.xls'
+      r301      '/01QuestUS.xls',       'http://d21c7j241p6103.cloudfront.net/questionnaires/01QuestUS.xls'
     end
   end
 end
