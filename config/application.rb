@@ -50,6 +50,7 @@ module Expat
       r301      '/incorporation.htm',   '/expat-tax-advisor'
       r301      '/russian_tax.htm',     '/'
       r301      '/TIC.htm',             'http://www.cornerstonedst.com/'
+      r302      '/Corporation_HQ.jpg',  'http://www.expattaxpreparers.com/Corporation_HQ.jpg'
     end
   end
 end
