@@ -23,7 +23,6 @@ function workerSelector(workers) {
 
 function swapWorker(label) {
   var i = new Image();
-  i.src = workerList[label][0];
   $("#worker").stop();
   $("#worker").fadeTo("slow", 0.01);
   i.onload = function() {
@@ -42,4 +41,5 @@ function swapWorker(label) {
   $("#worker").append(workerList[label][1]);
   $("#worker").append('<div class="clear"></div>');
   }
+  i.src = workerList[label][0];
 }

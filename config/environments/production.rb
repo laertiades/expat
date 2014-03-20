@@ -92,6 +92,7 @@ Expat::Application.configure do
     :entitystore  => client
   }
   config.middleware.insert_before(Rack::Cache, Mobvious::Manager)
+  config.cache_store = :dalli_store
 
 =begin
   config.middleware.delete "Rack::MobileDetect"

@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: git://github.com/laertiades/rack-cache.git
-  revision: 7bc43c9ccbd74d912bcb8f4f9e250e10ffa1ff69
+  revision: bb1a1aba22a472a269310e29eab36a1550134b15
   specs:
     rack-cache (2.2)
       rack (>= 0.4)

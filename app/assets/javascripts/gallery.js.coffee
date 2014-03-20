@@ -12,19 +12,13 @@ gallery = ->
     if $('.ban-pic').length >= 2 then $('.ban-pic:last').remove()
 
 picSwap = ->
-  if $('html').is('.ie6, .ie7, .ie8')
+  i = new Image()
+  i.onload = ->
     $('#gallery').prepend '<img class="ban-pic" />'
     $('.ban-pic:first').attr "src", preloadedImgs[counter].src
     ++ counter
     if counter >= preloadedImgs.length then counter = 0
-  else
-    i = new Image()
-    i.src = preloadedImgs[counter].src
-    i.onload = ->
-      $('#gallery').prepend '<img class="ban-pic" />'
-      $('.ban-pic:first').attr "src", preloadedImgs[counter].src
-      ++ counter
-      if counter >= preloadedImgs.length then counter = 0
+  i.src = preloadedImgs[counter].src
 
 reload = ->
   picSwap()
