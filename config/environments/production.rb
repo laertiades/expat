@@ -91,6 +91,8 @@ Expat::Application.configure do
     :metastore    => client,
     :entitystore  => client
   }
+  config.middleware.insert_before(Rack::Cache, Mobvious::Manager)
+
 =begin
   config.middleware.delete "Rack::MobileDetect"
   config.middleware.insert_before Rack::Cache, Rack::MobileDetect 

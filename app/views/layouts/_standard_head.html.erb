@@ -2,6 +2,8 @@
 	[:name => 'msapplication-TileImage', :content => asset_path('favicon-144.png')] %>
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <% if @cms_page.blank? then %>
   <%= metamagic :title => full_title(yield(:title)),
 		:description => "Certified Public Accountant services for expatriates" %>

@@ -50,6 +50,7 @@ Expat::Application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
+=begin
   client = Dalli::Client.new('localhost:11211',
     :failover => true,
     :socket_timeout => 1.5,
@@ -60,5 +61,6 @@ Expat::Application.configure do
     :entitystore      => client
   }
   config.static_cache_control = "public, max-age=2592000"
-  
+=end
+  config.middleware.use Mobvious::Manager
 end
