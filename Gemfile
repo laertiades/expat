@@ -25,6 +25,7 @@ gem 'aws-sdk'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 # gem 'will_paginate'
 gem 'rack-cache', :git => 'git://github.com/laertiades/rack-cache.git'
+gem 'rack-cache-purge', :git => 'git://github.com/laertiades/rack-cache-purge.git'
 gem 'dalli'
 gem 'kgio'
 gem "memcachier"

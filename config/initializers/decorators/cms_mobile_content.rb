@@ -1,9 +1,9 @@
 Cms::ContentController.class_eval do
   def show
     if @cms_page.target_page.present?
-      if ComfortableMexicanSofa.config.enable_conditional_get_support
-	expires_in 3.days, :public => true
-      end
+#      if ComfortableMexicanSofa.config.enable_conditional_get_support
+#	expires_in 3.days, :public => true
+ #     end
       redirect_to @cms_page.target_page.url
     else
       respond_with(@cms_page) do |format|
@@ -19,7 +19,7 @@ Cms::ContentController.class_eval do
       if @cms_layout = @cms_page.layout
 	app_layout = (@cms_layout.app_layout.blank? || request.xhr?) ? false : @cms_layout.app_layout
 	if ComfortableMexicanSofa.config.enable_conditional_get_support
-	  expires_in 2.days, :public => true, :'s-maxage' => '36000'
+	  expires_in 2.days, :public => true, :'s-maxage' => '2592000'
 #	  expires_in 2.days, :public => false
 	end
 	if !ComfortableMexicanSofa.config.enable_conditional_get_support || stale?(:etag => flash.to_hash, :last_modified => @cms_page.site.updated_at)
@@ -40,7 +40,7 @@ Cms::ContentController.class_eval do
       if @cms_layout = @cms_page.layout
 	app_layout = (@cms_layout.app_layout.blank? || request.xhr?) ? false : @cms_layout.app_layout
 	if ComfortableMexicanSofa.config.enable_conditional_get_support
-	  expires_in 2.days, :public => true, :'s-maxage' => '36000'
+	  expires_in 2.days, :public => true, :'s-maxage' => '2592000'
 #	  expires_in 2.days, :public => false
 	  if stale?(:etag, :last_modified => @cms_page.site.updated_at)
 	    render :inline => @cms_page.content, :layout => app_layout, :status => status, :content_type => 'text/html'

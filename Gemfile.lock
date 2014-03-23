@@ -18,6 +18,13 @@ GIT
       sass-rails (>= 3.1.0)
 
 GIT
+  remote: git://github.com/laertiades/rack-cache-purge.git
+  revision: 8f5b7db48820c8ddff4d97132e26a526df5c8272
+  specs:
+    rack-cache-purge (0.0.2)
+      rack-cache (~> 2.2)
+
+GIT
   remote: git://github.com/laertiades/rack-cache.git
   revision: bb1a1aba22a472a269310e29eab36a1550134b15
   specs:
@@ -304,6 +311,7 @@ DEPENDENCIES
   nokogiri (~> 1.6.0)
   pg (~> 0.17.1)
   rack-cache!
+  rack-cache-purge!
   rack-rewrite
   rack-timeout
   rails (~> 4.0.2)
