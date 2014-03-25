@@ -1,6 +1,7 @@
 class ManagersController < ApplicationController
   http_basic_authenticate_with name: ENV['TRACKER_USERNAME'], password: ENV['TRACKER_PASSWORD']
   layout "tracker"
+  protect_from_forgery with: :exception
   
   def index
     @managers = Manager.all
