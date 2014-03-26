@@ -16,6 +16,7 @@ picSwap = ->
   i.onload = ->
     $('#gallery').prepend '<img class="ban-pic" />'
     $('.ban-pic:first').attr "src", preloadedImgs[counter].src
+    $('.ban-pic:first').attr "alt", "American expat tax services"
     ++ counter
     if counter >= preloadedImgs.length then counter = 0
   i.src = preloadedImgs[counter].src
