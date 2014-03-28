@@ -1,8 +1,19 @@
+<% meta [:name => 'msapplication-TileColor', :content => "#FFFFFF"],
+	[:name => 'msapplication-TileImage', :content => asset_path('favicon-144.png')] %>
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <meta name=viewport content="width=device-width, initial-scale=1">
+    <% if @cms_page.blank? then %>
+    <%= metamagic :title => full_title(yield(:title)),
+		  :description => "Certified Public Accountant services for expatriates" %>
+    <% else %>
+    <%= metamagic :title => full_title(cms_page_content(:seo_title)),
+		  :description => cms_page_content(:seo_description) %>
+    <% end %>
     <%= favicon_link_tag 'favicon.ico' %>
+    <%= favicon_link_tag 'favicon-152.png', rel: 'apple-touch-icon-precomposed', type: 'image/png' %>
     <%= stylesheet_link_tag "mobapp", media: "all", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>

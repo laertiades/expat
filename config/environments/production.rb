@@ -92,7 +92,7 @@ Expat::Application.configure do
     :entitystore  => client
   }
   config.middleware.insert_before(Rack::Cache, Mobvious::Manager)
-  config.middleware.insert_after(Rack::Cache, Rack::Cache::Purge, "HTTP_EXPAT_EXPUNGE")
+  config.middleware.insert_after(Rack::Cache, Rack::Cache::Purge, ENV['PURGE'])
   config.cache_store = :dalli_store
 
 =begin

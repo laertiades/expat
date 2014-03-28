@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
-    expires_in 2.days, :public => true, :'s-maxage' => '36000'
+    expires_in 2.days, :public => true, :'s-maxage' => '2592000'
     if stale?(:etag, :last_modified => Cms::Site.first.updated_at)
       if request.fullpath == "/contact-us"
 	render :cms_page => '/contact-us'
