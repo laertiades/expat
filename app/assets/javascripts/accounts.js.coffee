@@ -4,11 +4,11 @@
 
 reload = ->
   filter = false
-  height = window.innerHeight - 290
+  height = window.innerHeight - 300
   oTable = $('.datatable').dataTable({
     "sScrollY": height,
     "aLengthMenu": [20, 50, 200, 1000],
-    "iDisplayLength": 50,
+    "iDisplayLength": 1000,
     "sDom": 'lTf<"clear">rtip',
     "oTableTools": {
     "sSwfPath": "/swf/copy_csv_xls_pdf.swf",
