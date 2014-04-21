@@ -13,7 +13,7 @@ class Account < ActiveRecord::Base
     sub = sub + (b ? 25 : 0)
     sub = sub + (c ? 100 : 0)
     sub = sub + (d ? 75 : 0)
-    sub = sub + (e ? 75 : 0)
+    sub = sub + (e ? 100 : 0)
     sub = sub + (extension ? 75 : 0)
     sub = sub + (f ? 75 : 0)
     sub = sub + (f8938 ? 75 : 0)
