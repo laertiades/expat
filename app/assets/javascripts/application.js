@@ -18,3 +18,4 @@
 //= require dataTables/extras/TableTools
 //= require dataTables/extras/ZeroClipboard
 //= require_tree .
+//= require simple_captcha

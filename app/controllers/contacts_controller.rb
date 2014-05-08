@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+include SimpleCaptcha::ViewHelper
+
   def new
     @contact = Contact.new
     expires_in 2.days, :public => true, :'s-maxage' => '2592000'
@@ -14,23 +16,20 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     
-    if @contact.valid?
-      if UserMailer.new_message(@contact).deliver
-        flash.now[:success] = "Your message was sent.  Thank you for your interest in ExpatCPA."
-        render :cms_page => '/'
-      else
-	if request.referrer.index "/contact-us"
-          render :cms_page => '/contact-us'
+    if simple_captcha_valid?
+      if @contact.valid?
+	if UserMailer.new_message(@contact).deliver
+	  flash.now[:success] = "Your message was sent.  Thank you for your interest in ExpatCPA."
+	  render :cms_page => '/'
 	else
-          render :cms_page => '/getting-started'
+          contact_redirect
 	end
+      else
+        contact_redirect
       end
     else
-      if request.referrer.index "/contact-us"
-	render :cms_page => '/contact-us'
-      else
-	render :cms_page => '/getting-started'
-      end
+      flash.now[:error] = 'Failed Human Authentication'
+      contact_redirect
     end
   end
   
@@ -42,5 +41,13 @@ class ContactsController < ApplicationController
 
     def contact_params
       params.require(:contact).permit!
+    end
+    
+    def contact_redirect
+      if request.referrer.index "/contact-us"
+	render :cms_page => '/contact-us'
+      else
+	render :cms_page => '/getting-started'
+      end
     end
 end

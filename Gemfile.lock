@@ -26,10 +26,16 @@ GIT
 
 GIT
   remote: git://github.com/laertiades/rack-cache.git
-  revision: bb1a1aba22a472a269310e29eab36a1550134b15
+  revision: c3fb10334206fa39168c44ceb64dcbb5c1a171be
   specs:
     rack-cache (2.2)
       rack (>= 0.4)
+
+GIT
+  remote: git://github.com/laertiades/simple-captcha.git
+  revision: 018a8d43d5522329514e5cda3d26c80a7218e14e
+  specs:
+    simple_captcha (0.1.6)
 
 GIT
   remote: git://github.com/rweng/jquery-datatables-rails.git
@@ -320,6 +326,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.1)
   sdoc (= 0.3.20)
   selenium-webdriver (~> 2.35.1)
+  simple_captcha!
   turbolinks (~> 2.2.0)
   uglifier (>= 2.4.0)
   unicorn

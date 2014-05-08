@@ -15,11 +15,16 @@ gem 'turbolinks', '~> 2.2.0'
 gem 'jbuilder', '~> 1.5.3'
 gem 'metamagic', '~> 2.0.6'
 gem 'nokogiri', '~> 1.6.0'
+
 gem 'comfortable_mexican_sofa', :git => 'git://github.com/laertiades/comfortable-mexican-sofa.git'
 # gem 'comfortable_mexican_sofa', '~> 1.11.0'
 # gem 'comfortable_mexican_sofa', '~> 1.11.0', :git => 'git://github.com/laertiades/comfortable-mexican-sofa.git'
 # gem 'comfortable_mexican_sofa', '~> 1.11.0', :path => '/home/jesse/rails/comfortable-mexican-sofa'
+
 # gem 'simple_captcha', :git => 'git://github.com/pludoni/simple-captcha.git'
+# gem 'simple_captcha', :git => 'git://github.com/galetahub/simple-captcha.git'
+gem 'simple_captcha', :git => 'git://github.com/laertiades/simple-captcha.git'
+
 gem 'mobvious'
 gem 'aws-sdk'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'

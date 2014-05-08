@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 #  protect_from_forgery with: :exception
 #  before_filter :force_tablet_html
 #  has_mobile_fu
+  include SimpleCaptcha::ControllerHelpers
   def set_format
     if request.env['mobvious.device_type'] == :mobile
       request.format = :mobile
