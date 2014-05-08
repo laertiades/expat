@@ -58,6 +58,8 @@
     <%= f.check_box(:russian) %>
     <%= f.label(:russian, "Reply with fee quote for Russian tax services") %>
   </div>
+  <div class="form-group">
   <%= render 'simple_captcha/simple_captcha' %>
   <%= f.submit "Send Message", class: "btn btn-large btn-primary" %>
+  </div>
 <% end %>
