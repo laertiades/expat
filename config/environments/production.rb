@@ -91,7 +91,9 @@ Expat::Application.configure do
     :metastore    => client,
     :entitystore  => client
   }
+  config.middleware.delete "SimpleCaptcha::Middleware"
   config.middleware.insert_before(Rack::Cache, Mobvious::Manager)
+  config.middleware.insert_before(Mobvious::Manager, SimpleCaptcha::Middleware)
   config.middleware.insert_after(Rack::Cache, Rack::Cache::Purge, ENV['PURGE'])
   config.cache_store = :dalli_store
 
