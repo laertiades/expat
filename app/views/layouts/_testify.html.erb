@@ -1,5 +1,5 @@
 <% res = ""
- @cms_site.snippets.for_category('testimony').each do |snip|
+ Cms::Site.first.snippets.for_category('testimony').each do |snip|
   res += "'"
   res += Jhelp.escape_js snip.content
   res += "', "

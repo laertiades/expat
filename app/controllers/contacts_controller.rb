@@ -20,7 +20,10 @@ include SimpleCaptcha::ViewHelper
       if @contact.valid?
 	if UserMailer.new_message(@contact).deliver
 	  flash.now[:success] = "Your message was sent.  Thank you for your interest in ExpatCPA."
-	  render :cms_page => '/'
+          render :cms_page => '/'
+#           @years = params[:contact][:years] || 0
+#           @name = params[:contact][:name] || "customer"
+#           render 'message'
 	else
           contact_redirect
 	end
@@ -36,7 +39,12 @@ include SimpleCaptcha::ViewHelper
   def getform
     redirect_to 'https://s3.amazonaws.com/expatcpa/questionnaires/2013.xlsx'
   end
-
+  
+  def message
+    @name = params[:name] || "Customer"
+    @years = params[:years] || 1
+  end
+  
   private
 
     def contact_params

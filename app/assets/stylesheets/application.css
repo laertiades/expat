@@ -13,6 +13,7 @@
  *= require accounts
  *= require consultants
  *= require contacts
+ *= require message
  *= require dataTables/jquery.dataTables.bootstrap3
  *= require dataTables/extras/TableTools
  *= require dataTables/extras/TableTools_JUI

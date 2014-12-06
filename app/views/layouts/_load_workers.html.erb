@@ -1,5 +1,5 @@
 <% res = "" %>
-<% @cms_site.files.images.for_category('lgworker').each do |snip| %>
+<% Cms::Site.first.files.images.for_category('lgworker').each do |snip| %>
   <% res += '"' + snip.label + '": [' %>
   <% res += '"' + snip.file.url + '", ' %>
   <% res += '"' %>

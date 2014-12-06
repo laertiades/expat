@@ -1,0 +1,106 @@
+.row.email-message
+  .col-md-7.col-md-offset-1.col-sm-8
+    %p= "Dear #{@name || 'Customer'},"
+    %p.sub-heading US Expatriate Tax
+    %p
+      Thank you for visiting our website and we look forward to providing you with professional and timely tax services.  We have been serving the expatriate community since 1994 and we have American expatriate clients living in nearly every major country of the world.  Please find our fee schedule below.
+    %p
+      United States citizens living abroad are required to file annual U.S. income tax returns and report their worldwide income if they meet the minimum income filing requirements for their filing status and age.  However, as an expatriate with a tax home in a foreign country, you may be eligible to exclude up to $97,600 of your foreign earned income from US taxation for the 2013 tax year by meeting one of two tests.  In addition, you may also be able to deduct part of your qualifying housing cost and receive a credit for income taxes paid to a foreign government.  If your tax home is in a foreign country on April 15th then you have an automatic extension until June 16th to file your tax return.  However, if you ultimately have a tax liability, interest will begin to accrue as of April 15th and penalties for paying late will begin to accrue as of June 16th.
+    %p
+      To begin the process, please complete
+      - if @years.to_i == 1
+        our 2014 US Tax Organizer
+      - elsif @years.to_i == 2
+        our 2013 and 2014 US Tax Organizer forms
+      - else
+        the relevant tax organizer forms from those
+      shown below in Excel format, or click on the icon to the right for our online tax notebook.
+    %p
+      %a{ :href => "#" } 2014 US Tax Organizer
+    - if @years.to_i > 1
+      %p
+        %a{ :href => "https://s3.amazonaws.com/expatcpa/questionnaires/2013.xlsx" } 2013 US Tax Organizer
+    - if @years.to_i > 2
+      %p
+        %a{ :href => "https://s3.amazonaws.com/expatcpa/questionnaires/2012.xlsx" } 2012 US Tax Organizer
+      %p
+        %a{ :href => "https://s3.amazonaws.com/expatcpa/questionnaires/2011.xlsx" } 2011 US Tax Organizer
+      %p
+        %a{ :href => "https://s3.amazonaws.com/expatcpa/questionnaires/2010.xls" } 2010 US Tax Organizer
+      %p
+        %a{ :href => "https://s3.amazonaws.com/expatcpa/questionnaires/2009.xls" } 2009 US Tax Organizer
+      %p
+        %a{ :href => "https://s3.amazonaws.com/expatcpa/questionnaires/2008.xls" } 2008 US Tax Organizer
+      %p
+        %a{ :href => "https://s3.amazonaws.com/expatcpa/questionnaires/2007.xls" } 2007 US Tax Organizer
+    %p
+      If you have additional tax documents, please contact us to set up a secure portal for information exchange.  We have implemented a portal system to provide for safe and secure exchange of sensitive tax data. It’s easy to use and won’t cost you any additional fees. Alternatively, you may also fax copies to us at (714) 939-1032, email copies as an attachment, or mail copies of the documents (you should keep all originals).  We will use the information you provide to prepare your US federal and state (if applicable) tax returns.  Once you submit the Tax Organizer, we will contact you with any questions we may have.  When the return is complete, we will then send you your completed income tax return as a password protected PDF file for your review.
+    %p
+      Our fees for processing a US expatriate tax return for NEW CLIENTS is as follows, per tax year:
+    %ul
+      %li
+        %span.cost
+          $299 USD
+        Expatriate federal income tax return
+        %br
+        (includes Forms 1040, Form 2555 and all other forms not listed below)
+      %li
+        %span.cost
+          $135 USD
+        Foreign tax credits (Form 1116)
+      %li
+        %span.cost
+          $85 USD
+        Itemized deductions (Schedule A)
+      %li
+        %span.cost
+          $35 USD
+        Interest and Dividends (Schedule B)
+      %li
+        %span.cost
+          $125 USD
+        Self Employed (Schedule C) 
+      %li
+        %span.cost
+          $75 USD
+        Capital gains (Schedule D)
+      %li
+        %span.cost
+          $125 USD
+        Rental and passive income (Schedule E)
+      %li
+        %span.cost
+          $175 USD
+        State tax return (if applicable)
+      %li
+        %span.cost
+          $75 USD
+        Extension (if applicable)
+      %li
+        %span.cost
+          $75 USD
+        Disclose foreign bank accounts
+        %br
+        (Form TD F 90-22.1, up to 5 bank accounts, if applicable)
+      %li
+        %span.cost
+          $75-150 USD
+        Disclose foreign financial assets (Form 8938, if applicable)
+    %h6 ***We may be able to offer a bulk discount for the preparation of multiple years at once.
+    %p
+      Our fees are charged to you over two payments: the first (50% retainer fee) at the commencement of work on your tax return, and the second upon completion of your tax return.  In the event that a particular tax return will have a higher fee, we will contact you before the work is performed. The fee also includes any consultation you may require during the tax year, as well as our periodic newsletter on updates in US tax law.
+    %p
+      Please note that US Government employees do not qualify for the exclusions mentioned above.
+    %p
+      For your convenience, we accept MasterCard, American Express, and Visa credit cards, and in some cases US personal checks.
+    %p
+      If you currently do not need your tax return prepared but would like a consultation, please reply with your phone number, date (Monday – Friday) and time (PST) you would like to schedule the consultation.  Our fee for a consultation is $250 USD per hour.  Since consultations are free to current clients, this payment will be credited toward your first invoice when we prepare your tax return.
+    %p
+      Please feel free to contact me if you have any questions about our services.  I look forward to working with you throughout the tax season.
+    %p Best regards,
+    %p John Harvey CPA, MBT
+    %p Senior Tax Partner
+  .col-sm-4
+    .bump-down
+    %a{ :href => "https://www.taxnotebook.com/tnstart.asp?welcome=JY1361507", :target => "_blank" }
+      %img{ :src => "http://d21c7j241p6103.cloudfront.net/cms/files/files/000/000/061/original/TaxNotebookN.png" }

@@ -11,6 +11,7 @@ Expat::Application.routes.draw do
   match '/getting-started', to: 'contacts#new', via: 'get'
   match '/2013 US Tax Questionnaire.xlsx', to: 'contacts#getform', via: 'get'
   match '/captchaurl', to: 'captcha#captchaImage', via: 'get'
+  match '/test_message', to: 'contacts#message', via: 'get'
 
   match "/#{ENV['GOOGLE']}.html", to: proc { |env| [200, {},
     ["google-site-verification: #{ENV['GOOGLE']}.html"]] }, via: 'get'
