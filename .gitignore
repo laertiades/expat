@@ -27,3 +27,4 @@ doc/
 # application.rb
 db.dump
 /config/app_environment_variables.rb
+*.directory
