@@ -35,7 +35,8 @@ Expat::Application.configure do
     :user_name            => ENV['LOCAL_USERNAME'],
     :password             => ENV['LOCAL_PASSWORD'],
     :authentication       => :login,
-    :enable_starttls_auto => true
+    :enable_starttls_auto => true,
+    :openssl_verify_mode  => "none"
   }
   
   config.action_mailer.default_url_options = {

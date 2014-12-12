@@ -15,10 +15,13 @@ include SimpleCaptcha::ViewHelper
 
   def create
     @contact = Contact.new(contact_params)
-    
     if simple_captcha_valid?
       if @contact.valid?
 	if UserMailer.new_message(@contact).deliver
+          @followup = Followup.new({ :name => params[:contact][:name], :years => params[:contact][:years], :email => params[:contact][:email] })
+          if @followup.email.present?
+            FollowupMailer.new_message(@followup).deliver
+          end
 	  flash.now[:success] = "Your message was sent.  Thank you for your interest in ExpatCPA."
           render :cms_page => '/'
 #           @years = params[:contact][:years] || 0
