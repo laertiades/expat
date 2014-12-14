@@ -25,7 +25,6 @@ include SimpleCaptcha::ViewHelper
 	  flash.now[:success] = "Your message was sent.  Thank you for your interest in ExpatCPA."
           render :cms_page => '/'
 #           @years = params[:contact][:years] || 0
-#           @name = params[:contact][:name] || "customer"
 #           render 'message'
 	else
           contact_redirect
@@ -44,8 +43,18 @@ include SimpleCaptcha::ViewHelper
   end
   
   def message
-    @name = params[:name] || "Customer"
-    @years = params[:years] || 1
+    @years = params[:years] || 0
+    rawName = params[:name].strip
+    if rawName.present?
+      if rawName.index(', ')
+        arrName = rawName.split(', ')
+        @name = "#{arrName[1].strip} #{arrName[0].strip}"
+      else
+        @name = rawName
+      end
+    else
+      @name = "customer"
+    end
   end
   
   private
