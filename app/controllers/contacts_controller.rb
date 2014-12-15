@@ -22,10 +22,21 @@ include SimpleCaptcha::ViewHelper
           if @followup.email.present?
             FollowupMailer.new_message(@followup).deliver
           end
-	  flash.now[:success] = "Your message was sent.  Thank you for your interest in ExpatCPA."
-          render :cms_page => '/'
-#           @years = params[:contact][:years] || 0
-#           render 'message'
+# 	  flash.now[:success] = "Your message was sent.  Thank you for your interest in ExpatCPA."
+#           render :cms_page => '/'
+          @years = params[:contact][:years] || 0
+          rawName = params[:contact][:name].strip
+          if rawName.present?
+            if rawName.index(', ')
+              arrName = rawName.split(', ')
+              @name = "#{arrName[1].strip} #{arrName[0].strip}"
+            else
+              @name = rawName
+            end
+          else
+            @name = "customer"
+          end
+          render 'message'
 	else
           contact_redirect
 	end
@@ -43,18 +54,6 @@ include SimpleCaptcha::ViewHelper
   end
   
   def message
-    @years = params[:years] || 0
-    rawName = params[:name].strip
-    if rawName.present?
-      if rawName.index(', ')
-        arrName = rawName.split(', ')
-        @name = "#{arrName[1].strip} #{arrName[0].strip}"
-      else
-        @name = rawName
-      end
-    else
-      @name = "customer"
-    end
   end
   
   private

@@ -1,5 +1,48 @@
-Name: <%= @followup.name %>
+<%= "Dear #{@followup.name || 'Customer'}," %>
 
-Email: <%= @followup.email %>
+WELCOME--LET'S GET STARTED
 
-Years: <%= @followup.years %>
+<% if @followup.years.to_i == 1 %>
+<%= render 'followup_mailer/paragraph1_years1' %>
+<% elsif @followup.years.to_i == 2 %>
+<%= render 'followup_mailer/paragraph1_years2' %>
+<% else %>
+<%= render 'followup_mailer/paragraph1_years3' %>
+<% end %>
+<%= render 'followup_mailer/paragraph2' %>
+<% if @followup.years.to_i == 1 %>
+If your tax home is in a foreign country on April 15th then you have an automatic extension until June 16th to file your tax return. However, if you ultimately have a tax liability, interest will begin to accrue as of April 15th and penalties for paying late will begin to accrue as of June 15th.
+
+<% end %>
+<%= "#{@followup.name.split(' ')[0]}'#{'s' if @followup.name.split(' ')[0][-1] != 's'} US Tax Organizer#{ 's' if @followup.years.to_i > 1 }" %>
+
+<% if @followup.years.to_i == 1 %>
+<%= render 'followup_mailer/organizers1' %>
+<% elsif @followup.years.to_i == 2 %>
+<%= render 'followup_mailer/organizers2' %>
+<% else %>
+<%= render 'followup_mailer/organizers3' %>
+<% end %>
+Please email the completed excel US Tax Organizer and any other tax documents to us at newreturn@expatcpa.com<%= "#{'.' if @followup.years.to_i > 1}" %><%= " (please note that if you chose the online Tax Notebook it is submitted online)." if @followup.years.to_i == 1 %>  Alternatively, we have implemented a portal system to provide for safe and secure exchange of sensitive tax data. It’s easy to use and won’t cost you any additional fees. Email your request for a secure portal to contact@expatcpa.com.  You may also fax copies to us at (714) 939-1032 or mail copies of the documents to our office (you should keep all originals).
+
+We will use the information you provide to prepare your US federal and state (if applicable) tax returns. Once you submit your tax information, we will contact you with any questions we may have. When the return is complete, we will then send you your completed income tax return as a password protected PDF file for your review.
+
+<%= "#{@followup.name.split(' ')[0]}'#{'s' if @followup.name.split(' ')[0][-1] != 's'} Fee Schedule" %>
+
+<% if @followup.years.to_i == 1 %>
+Our fees for processing a US expatriate tax return for 2014 are stated below.  Simply add the fee amounts that apply to the type of income you realized in 2014 to arrive at your fee total.
+<% else %>
+Our fees for processing a US expatriate tax return are stated below, per tax year. Simply add the fee amounts that apply to the type of income you realized in each year to arrive at your fee total.  Alternatively, if you require more than two years of tax filings, we offer a bulk discount of the lesser of $399 per tax year or the rates stated below:
+<% end %>
+
+<%= render 'followup_mailer/fee_schedule' %>
+Our fees are charged to you over two payments: the first a retainer of $299 <%= "#{'(per tax year) ' if @followup.years.to_i > 1}" %>at the commencement of work on your tax return, and the second upon completion of your tax return for the remaining balance. In the event that a particular tax return will have a higher fee, we will contact you before the work is performed. The fee also includes any consultation you may require during the tax year, as well as our periodic newsletter on updates in US tax law.
+
+<% if @followup.years.to_i == 1 %>
+For your convenience, we accept MasterCard, American Express, and Visa credit cards, and in some cases US personal checks. If you chose to use the excel Tax Organizer then the credit card form is contained within the organizer.  If you chose the Tax Notebook please link in the following credit card form and email to newreturn@expatcpa.com
+(Credit Card Form).
+<% else %>
+For your convenience, we accept MasterCard, American Express, and Visa credit cards, and in some cases US personal checks. The credit card form is contained within the tax organizer and need only be filled out once.
+<% end %>
+
+<%= render 'followup_mailer/message_ending' %>

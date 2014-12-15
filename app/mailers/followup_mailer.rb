@@ -1,5 +1,5 @@
 class FollowupMailer < ActionMailer::Base
-  default from: "info@expatcpa.com"
+  default from: "contact@expatcpa.com"
   default to:   "john@expatcpa.com"
 #  default to:   "jesse@goodfellowsites.com"
   if !Rails.env.production?
@@ -8,8 +8,8 @@ class FollowupMailer < ActionMailer::Base
 
   def new_message(followup)
     @followup = followup
-    address = followup.email 
-    mail(:subject => "Instructions for you Expatcpa tax return", to: "#{address}")
+    address = followup.email.strip
+    mail(:subject => "Instructions for your ExpatCPA tax return", to: "#{address}")
   end
   
 end
