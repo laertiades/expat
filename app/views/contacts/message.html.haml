@@ -11,7 +11,7 @@
     = render 'contacts/paragraph2'
     - if @years.to_i == 1
       %p
-        If your tax home is in a foreign country on April 15th then you have an automatic extension until June 16th to file your tax return. However, if you ultimately have a tax liability, interest will begin to accrue as of April 15th and penalties for paying late will begin to accrue as of June 15th.
+        If your tax home is in a foreign country on April 15th then you have an automatic extension until June 15th to file your tax return. However, if you ultimately have a tax liability, interest will begin to accrue as of April 15th and penalties for paying late will begin to accrue as of June 15th.
     %p
       %u= "#{@name.split(' ')[0]}'#{'s' if @name.split(' ')[0][-1] != 's'} US Tax Organizer#{ 's' if @years.to_i > 1 }"
     - if @years.to_i == 1
