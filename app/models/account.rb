@@ -21,6 +21,6 @@ class Account < ActiveRecord::Base
     sub = sub + (misc || 0)
     
     self.fee = sub
-    self.cost = sub * 0.35
+    self.cost = sub * 0.4
   end
 end
