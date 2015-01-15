@@ -74,11 +74,11 @@
     <td>-<%= number_to_currency(acc.deposit) %></td>
     <td>-<%= number_to_currency(acc.payment) %></td>
     <td><%= number_to_currency(balance) %></td>
-    <% unless acc.manager.name == "Soucie" || acc.manager.name == "Winters" || acc.manager.name == "Choudhury" %>
-      <td></td>
-    <% else %>
+    <% if acc.manager.name == "Soucie" || acc.manager.name == "Winters" || acc.manager.name == "Choudhury" || acc.manager.name == "Rachel" || acc.manager.name == "Michael" %>
       <% costs = costs + (acc.cost || 0) %>
       <td><%= number_to_currency(acc.cost) %></td>
+    <% else %>
+      <td></td>
     <% end %>
   </tr>
   <% end %>

@@ -4,7 +4,7 @@ class ManagersController < ApplicationController
   protect_from_forgery with: :exception
   
   def index
-    @managers = Manager.all
+    @managers = Manager.all.order('updated_at DESC')
   end
 
   def new
